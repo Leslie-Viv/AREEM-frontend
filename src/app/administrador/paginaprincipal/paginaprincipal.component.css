@@ -1,0 +1,127 @@
+.contenedor-con-fondo {
+    /* Establece una altura para el contenedor */
+    height: 90px; /* Puedes ajustar esta altura según tus necesidades */
+
+    /* Establece la imagen como fondo */
+    background-image: url('../../../assets/img/Navbars.png');
+    /* Ajusta la posición y tamaño de la imagen de fondo */
+    background-size: cover; /* La imagen se ajustará al tamaño del contenedor */
+    background-position: center; /* La imagen se centrará dentro del contenedor */
+}
+.title {
+
+    background-size: cover;
+    padding: 8px;
+    /* Ajusta otros estilos según tus necesidades */
+
+  }
+  .icon-and-text {
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .icon-and-text i {
+    margin-right: 5px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
+    position: absolute;
+    top: 5%;
+    left: 45%;
+  }
+  
+  .text {
+    position: absolute;
+    top: 5%;
+    left: 47%;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 24px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: bold; 
+  }
+
+  .text-container{
+    position: absolute;
+    color:rgb(83, 77, 77);
+    top: 18%;
+    left: 35%;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 25px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 1000;
+  }
+  
+  .imagen-centrada{
+    position: absolute;
+    top: 26%;
+    left: 31%;
+    width: 39%; /* Ajusta el ancho de la imagen según sea necesario */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  }
+  .imagen-ingreso{
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    width: 10%; /* Ajusta el ancho de la imagen según sea necesario */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  }
+  .imagen-usuario{
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    width: 9.5%; /* Ajusta el ancho de la imagen según sea necesario */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  }
+  .pregunta1{
+    position: absolute;
+    color:rgb(83, 77, 77);
+    top: 65%;
+    left: 5%;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 1000;
+  }
+  .pregunta2{
+    position: absolute;
+    color:rgb(83, 77, 77);
+    top: 65%;
+    left: 60%;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 1000;
+  }
+  .boton-registrar {
+    width: 100px; /* Ajusta el tamaño del botón según sea necesario */
+    height: 40px; /* Ajusta el tamaño del botón según sea necesario */
+    background-color: rgb(166, 181, 99); /* Establece el color de fondo del botón */
+    color: white; /* Establece el color del texto del botón */
+    font-size: 16px; /* Ajusta el tamaño de la fuente del botón según sea necesario */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
+    display: flex; /* Permite centrar el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border-top-left-radius: 10px; /* Establece la esquina superior izquierda redonda */
+    border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+    border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
+    border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+    position: absolute;
+    top: 92%;
+    left: 16%;
+}
+
+.boton-agregar-usuario {
+    width: 100px; /* Ajusta el tamaño del botón según sea necesario */
+    height: 40px; /* Ajusta el tamaño del botón según sea necesario */
+    background-color: rgb(166, 181, 99); /* Establece el color de fondo del botón */
+    color: white; /* Establece el color del texto del botón */
+    font-size: 16px; /* Ajusta el tamaño de la fuente del botón según sea necesario */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
+    display: flex; /* Permite centrar el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border-top-left-radius: 10px; /* Establece la esquina superior izquierda redonda */
+    border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+    border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
+    border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+    position: absolute;
+    top: 92%;
+    left: 71%;
+}

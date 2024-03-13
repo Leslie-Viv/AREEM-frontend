@@ -1,0 +1,126 @@
+.contenedor-con-fondo {
+    /* Establece una altura para el contenedor */
+    height: 580px; /* Puedes ajustar esta altura según tus necesidades */
+
+    /* Establece la imagen como fondo */
+    background-image: url('../../assets/img/fondolo.png');
+    /* Ajusta la posición y tamaño de la imagen de fondo */
+    background-size: cover; /* La imagen se ajustará al tamaño del contenedor */
+    background-position: center; /* La imagen se centrará dentro del contenedor */
+}
+
+
+.imagen-centrada {
+    /* Puedes ajustar el tamaño de la imagen según sea necesario */
+    width: 800px;
+    height: 500px;
+   
+    /* Centra la imagen dentro del contenedor */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ 
+}
+.imagen-de-tarjeta{
+    width: 400px;
+    height: 500px;
+   
+    /* Centra la imagen dentro del contenedor */
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.imagen-logo{
+    width: 140px;
+    height: 140px;
+   
+    /* Centra la imagen dentro del contenedor */
+    position: absolute;
+    top: 39%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.titulo{
+    color:rgb(240, 242, 243);
+    /* Centra la imagen dentro del contenedor */
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    position: absolute;
+    top: 14%;
+    left: 57%;
+}
+.boton-ingresar {
+    width: 100px; /* Ajusta el tamaño del botón según sea necesario */
+    height: 40px; /* Ajusta el tamaño del botón según sea necesario */
+    background-color: rgb(166, 181, 99); /* Establece el color de fondo del botón */
+    color: white; /* Establece el color del texto del botón */
+    font-size: 16px; /* Ajusta el tamaño de la fuente del botón según sea necesario */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
+    display: flex; /* Permite centrar el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    border-top-left-radius: 10px; /* Establece la esquina superior izquierda redonda */
+    border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+    border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
+    border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+    position: absolute;
+    top: 79%;
+    left: 61%;
+}
+/*Inputs*/
+.input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    
+    position: absolute;
+    top: 55%;
+    left: 57%;
+  }
+  
+  .input:hover,
+  .input:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+  }
+
+  /*Input2*/
+  .input2 {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    position: absolute;
+    top: 68%;
+    left: 57%;
+  }
+  
+  .input2:hover,
+  .input2:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+  }
+  
+
+
+
+
+
+

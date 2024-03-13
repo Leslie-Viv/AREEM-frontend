@@ -1,0 +1,53 @@
+/* Estilos para el contenedor del sidenav */
+.example-container {
+    height: 100vh; /* Altura del contenedor */
+    background-color: rgba(240, 240, 240, 0.062); /* Color de fondo del contenedor con opacidad */
+    position: relative; /* Posición relativa para el contenido */
+  }
+  
+  
+  /* Estilos para el sidenav */
+  .example-sidenav {
+    width: 350px; /* Ancho del sidenav */
+    background-color: rgb(250, 171, 214); /* Color de fondo del contenedor */
+    position: relative; /* Posición relativa para el contenido */
+
+  }
+  
+  /* Estilos para la lista de navegación dentro del sidenav */
+  .mat-nav-list {
+    padding: 0; /* Elimina el relleno predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+  }
+  
+  /* Estilos para los elementos de lista de navegación */
+  .mat-list-item {
+    padding: 10px; /* Relleno de los elementos de lista */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los elementos */
+  }
+  
+  .mat-list-item:hover {
+    background-color: rgba(240, 240, 240, 0.5); /* Color de fondo del contenedor con opacidad */
+  }
+  
+  /* Estilos para el botón de hamburguesa */
+  .menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    
+
+  }
+  
+  .hamburger-icon {
+    font-size: 32px;
+    opacity: 2; /* Ajusta la opacidad según sea necesario */
+  }
+  .text{
+    font-size: 4px;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-weight: bold; /* Hacer el texto más grueso */
+  }
+
+  

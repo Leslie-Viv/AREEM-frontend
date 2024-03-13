@@ -1,0 +1,39 @@
+
+
+  .perfil{
+    position: absolute;
+    top: 4%;
+    left: 1130px;
+  }
+  .perfil-icon {
+    font-size: 40px; /* Tamaño del icono, ajusta según tus preferencias */
+  }
+  .icono-grande {
+    font-size: 30px; /* Ajusta el tamaño del icono según sea necesario */
+  }
+
+  .icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  .icon-button:focus {
+    outline: none;
+  }
+  
+  .icon-button:hover {
+    /* Agrega estilos de hover según tus preferencias */
+  }
+  .text{
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 15px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 750;
+  }
+
+
+
+
+
+
