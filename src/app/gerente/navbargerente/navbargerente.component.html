@@ -1,0 +1,14 @@
+<nav  style="position: relative">
+    <div>
+      <button mat-flat-button [matMenuTriggerFor]="menu" color="pink" class="perfil icon-button text">
+        <mat-icon style="font-size: 15px;">account_circle</mat-icon> Ver perfil
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item  (click)="Verperfilgerente()">Ver mi perfil</button>
+        <button mat-menu-item routerLink="">Cerrar Sesión</button>
+        <button mat-menu-item routerLink="./inicio-admin">Cancelar</button>
+      </mat-menu>
+    </div>
+    <!-- Aquí puedes agregar tus elementos de navegación -->
+  </nav>
+  

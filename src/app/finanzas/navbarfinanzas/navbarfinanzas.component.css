@@ -1,0 +1,72 @@
+
+.perfil-icon {
+    font-size: 40px; /* Tamaño del icono, ajusta según tus preferencias */
+  }
+  .icono-grande {
+    font-size: 30px; /* Ajusta el tamaño del icono según sea necesario */
+  }
+
+  .icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  .icon-button:focus {
+    outline: none;
+  }
+  
+  .icon-button:hover {
+    /* Agrega estilos de hover según tus preferencias */
+  }
+  .text{
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 15px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 750;
+  }
+
+  .contenedor-con-fondo {
+    /* Establece una altura para el contenedor */
+    height: 90px; /* Puedes ajustar esta altura según tus necesidades */
+
+    /* Establece la imagen como fondo */
+    background-image: url('../../../assets/img/Navbars.png');
+    /* Ajusta la posición y tamaño de la imagen de fondo */
+    background-size: cover; /* La imagen se ajustará al tamaño del contenedor */
+    background-position: center; /* La imagen se centrará dentro del contenedor */
+}
+.title {
+
+    background-size: cover;
+    padding: 8px;
+    /* Ajusta otros estilos según tus necesidades */
+
+  }
+ 
+  
+  .text {
+    position: absolute;
+    top: 25%;
+    left: 47%;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 24px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: bold; 
+  }
+
+  .text-container{
+    position: absolute;
+    color:rgb(83, 77, 77);
+    top: 18%;
+    left: 35%;
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 25px; /* Ajusta el tamaño del texto según tus necesidades */
+    font-weight: 1000;
+  }
+
+  .container{
+ height: 80px;
+  }
+
+  
+ 

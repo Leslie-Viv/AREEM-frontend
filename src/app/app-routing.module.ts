@@ -28,6 +28,18 @@ import { AgregarOrigendeegresoComponent } from './administrador/agregar-origende
 import { EditarOrigendeegresoComponent } from './administrador/editar-origendeegreso/editar-origendeegreso.component';
 import { EditarProductosyserviciosComponent } from './administrador/editar-productosyservicios/editar-productosyservicios.component';
 import { AgregarProductosyserviciosComponent } from './administrador/agregar-productosyservicios/agregar-productosyservicios.component';
+import { HomegerenteComponent } from './gerente/homegerente/homegerente.component';
+import { VerIngresogerenteComponent } from './gerente/ver-ingresogerente/ver-ingresogerente.component';
+import { VerEgresogerenteComponent } from './gerente/ver-egresogerente/ver-egresogerente.component';
+import { NuevoIngresogerenteComponent } from './gerente/nuevo-ingresogerente/nuevo-ingresogerente.component';
+import { NuevoEgresogerenteComponent } from './gerente/nuevo-egresogerente/nuevo-egresogerente.component';
+import { VerPerfilgerenteComponent } from './gerente/ver-perfilgerente/ver-perfilgerente.component';
+import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.component';
+import { VerIngresofinanzasComponent } from './finanzas/ver-ingresofinanzas/ver-ingresofinanzas.component';
+import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/nuevo-ingresofinanzas.component';
+import { VerEgresosfinanzasComponent } from './finanzas/ver-egresosfinanzas/ver-egresosfinanzas.component';
+import { NuevoEgresofinanzasComponent } from './finanzas/nuevo-egresofinanzas/nuevo-egresofinanzas.component';
+import { VerPerfilfinanzasComponent } from './finanzas/ver-perfilfinanzas/ver-perfilfinanzas.component';
 
 const routes: Routes = [
   // Otras rutas existentes
@@ -60,8 +72,20 @@ const routes: Routes = [
   { path: 'editar-productosyservicios', component: EditarProductosyserviciosComponent},//Editar productos y servicios
   { path: 'agregar-productosyservicios', component: AgregarProductosyserviciosComponent},//Agregar productos y servicios
   { path: 'ver-papelera', component: VerPapeleraComponent},//Ver papelera
-
-
+//Rutas gerente
+  { path: 'home-gerente', component: HomegerenteComponent},//Pagina principal gerente
+  { path: 'ver-ingresosgerente', component: VerIngresogerenteComponent},//Ver ingresos gerente
+  { path: 'nuevo-ingresogerente', component: NuevoIngresogerenteComponent},//Nuevo ingreso gerente
+  { path: 'ver-egresosgerente', component: VerEgresogerenteComponent},//Ver egresos gerente
+  { path: 'nuevo-egresogerente', component: NuevoEgresogerenteComponent},//Nuevo egreso gerente
+  { path: 'ver-usuariogerente', component: VerPerfilgerenteComponent},//Ver perfil gerente
+//Rutas Finanzas
+  { path: 'home-finanzas', component: HomeFinanzasComponent},//Pagina principal finanzas
+  { path: 'ver-ingresosfinanzas', component: VerIngresofinanzasComponent},//Ver ingresos finanzas
+  { path: 'nuevo-ingresofinanzas', component: NuevoIngresofinanzasComponent},//Nuevo ingreso finanzas
+  { path: 'ver-egresosfinanzas', component: VerEgresosfinanzasComponent},//Ver egresos finanzas
+  { path: 'nuevo-egresofinanzas', component: NuevoEgresofinanzasComponent},//Nuevo egreso finanzas
+  { path: 'ver-usuariofinanzas', component: VerPerfilfinanzasComponent},//Ver perfil finanzas
   
 ];
 

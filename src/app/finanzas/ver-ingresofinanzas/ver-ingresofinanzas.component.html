@@ -1,0 +1,49 @@
+<div class="contenedor-con-fondo position-fixed top-0 start-0 w-100">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <span class="icon-and-text">
+            <i class="material-icons">attach_money</i>
+            <span class="text">Ingresos</span>
+          </span>
+          <button (click)="Ingreso()" class="cssbuttons-io-button positionadd">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+          </button>
+          <button (click)="paginap()" class="positionback"><mat-icon>arrow_back</mat-icon>Regresar</button>
+        </div>
+      </div>
+    </div>
+  
+  
+    
+    <div class="container mt-4">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="pink-background">Id</th>
+              <th class="pink-background">Usuario</th>
+              <th class="pink-background">Unidad de Negocio</th>
+              <th class="pink-background">Año mes de reporte</th>
+              <th class="pink-background">Fecha Real</th>
+              <th class="pink-background">Fecha Sistema</th>
+              <th class="pink-background">Monto Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let element of dataSource">
+              <td>{{ element.Id }}</td>
+              <td>{{ element.Usuario }}</td>
+              <td>{{ element.Unidad_de_Negocio }}</td>
+              <td>{{ element.Ano_mes_de_reporte }}</td>
+              <td>{{ element.Fecha_Real }}</td>
+              <td>{{ element.Fecha_Sistema }}</td>
+              <td>{{ element.Monto_Total }}</td>
+  
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    

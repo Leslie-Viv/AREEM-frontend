@@ -40,6 +40,22 @@ import { AgregarOrigendeegresoComponent } from './administrador/agregar-origende
 import { EditarOrigendeegresoComponent } from './administrador/editar-origendeegreso/editar-origendeegreso.component';
 import { EditarProductosyserviciosComponent } from './administrador/editar-productosyservicios/editar-productosyservicios.component';
 import { AgregarProductosyserviciosComponent } from './administrador/agregar-productosyservicios/agregar-productosyservicios.component';
+import { HomegerenteComponent } from './gerente/homegerente/homegerente.component';
+import { NuevoIngresogerenteComponent } from './gerente/nuevo-ingresogerente/nuevo-ingresogerente.component';
+import { NuevoEgresogerenteComponent } from './gerente/nuevo-egresogerente/nuevo-egresogerente.component';
+import { VerEgresogerenteComponent } from './gerente/ver-egresogerente/ver-egresogerente.component';
+import { VerIngresogerenteComponent } from './gerente/ver-ingresogerente/ver-ingresogerente.component';
+import { VerPerfilgerenteComponent } from './gerente/ver-perfilgerente/ver-perfilgerente.component';
+import { MenuhamburguesagerenteComponent } from './gerente/menuhamburguesagerente/menuhamburguesagerente.component';
+import { NavbargerenteComponent } from './gerente/navbargerente/navbargerente.component';
+import { NavbarfinanzasComponent } from './finanzas/navbarfinanzas/navbarfinanzas.component';
+import { MenuhamburguesafinanzasComponent } from './finanzas/menuhamburguesafinanzas/menuhamburguesafinanzas.component';
+import { VerPerfilfinanzasComponent } from './finanzas/ver-perfilfinanzas/ver-perfilfinanzas.component';
+import { VerIngresofinanzasComponent } from './finanzas/ver-ingresofinanzas/ver-ingresofinanzas.component';
+import { VerEgresosfinanzasComponent } from './finanzas/ver-egresosfinanzas/ver-egresosfinanzas.component';
+import { NuevoEgresofinanzasComponent } from './finanzas/nuevo-egresofinanzas/nuevo-egresofinanzas.component';
+import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/nuevo-ingresofinanzas.component';
+import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +90,22 @@ import { AgregarProductosyserviciosComponent } from './administrador/agregar-pro
     EditarOrigendeegresoComponent,
     EditarProductosyserviciosComponent,
     AgregarProductosyserviciosComponent,
+    HomegerenteComponent,
+    NuevoIngresogerenteComponent,
+    NuevoEgresogerenteComponent,
+    VerEgresogerenteComponent,
+    VerIngresogerenteComponent,
+    VerPerfilgerenteComponent,
+    MenuhamburguesagerenteComponent,
+    NavbargerenteComponent,
+    NavbarfinanzasComponent,
+    MenuhamburguesafinanzasComponent,
+    VerPerfilfinanzasComponent,
+    VerIngresofinanzasComponent,
+    VerEgresosfinanzasComponent,
+    NuevoEgresofinanzasComponent,
+    NuevoIngresofinanzasComponent,
+    HomeFinanzasComponent,
   ],
   imports: [
     BrowserModule,
