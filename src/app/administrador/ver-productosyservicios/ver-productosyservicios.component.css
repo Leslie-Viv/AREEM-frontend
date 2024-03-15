@@ -26,14 +26,14 @@
     margin-right: 5px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
     position: absolute;
     top: 21%;
-    left: 45%;
+    left: 38%;
   }
   
   
   .text {
     position: absolute;
     top: 25%;
-    left: 47%;
+    left: 40%;
     font-family: Arial, sans-serif; /* Tipo de letra Arial */
     font-size: 24px; /* Ajusta el tamaño del texto según tus necesidades */
     font-weight: bold; 

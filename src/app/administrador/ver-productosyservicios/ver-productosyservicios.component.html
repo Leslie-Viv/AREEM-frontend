@@ -6,7 +6,7 @@
             <i class="material-icons">local_shipping</i>
             <span class="text">Productos/Servicios</span>
           </span>
-          <button class="cssbuttons-io-button positionadd">
+          <button (click)="agregarproducto()" class="cssbuttons-io-button positionadd">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
           </button>
           <button class="button position-dowland" type="button">
@@ -36,8 +36,8 @@
             <tr *ngFor="let element of dataSource">
               <td>{{ element.Id }}</td>
               <td>{{ element.Descripcion_servicio }}</td>
-              <td><button class="btn btn-second">Editar</button></td>
-              <td><button class="btn btn-second">Eliminar</button></td>
+              <td><button (click)="editarproducto()" class="btn btn-second">Editar</button></td>
+              <td><button  class="btn btn-second">Eliminar</button></td>
             </tr>
           </tbody>
         </table>

@@ -23,6 +23,12 @@ export class VerProductosyserviciosComponent {
 
   displayedColumns: string[] = ['Id','Descripcion_servicio'];
 
+  editarproducto(): void {
+    this.router.navigate(['/editar-productosyservicios']);
+  }
+  agregarproducto(): void {
+    this.router.navigate(['/agregar-productosyservicios']);
+  }
 
 
 }

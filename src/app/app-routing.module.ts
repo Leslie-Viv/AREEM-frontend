@@ -26,6 +26,8 @@ import { AgregarTipodeegresoComponent } from './administrador/agregar-tipodeegre
 import { EditarTipodeegresoComponent } from './administrador/editar-tipodeegreso/editar-tipodeegreso.component';
 import { AgregarOrigendeegresoComponent } from './administrador/agregar-origendeegreso/agregar-origendeegreso.component';
 import { EditarOrigendeegresoComponent } from './administrador/editar-origendeegreso/editar-origendeegreso.component';
+import { EditarProductosyserviciosComponent } from './administrador/editar-productosyservicios/editar-productosyservicios.component';
+import { AgregarProductosyserviciosComponent } from './administrador/agregar-productosyservicios/agregar-productosyservicios.component';
 
 const routes: Routes = [
   // Otras rutas existentes
@@ -55,6 +57,8 @@ const routes: Routes = [
   { path: 'agregar-origen', component: AgregarOrigendeegresoComponent},//Agregar origen egreso
   { path: 'editar-origen', component: EditarOrigendeegresoComponent},//Editar origen egreso
   { path: 'ver-productosyservicios', component: VerProductosyserviciosComponent},//Ver productos y servicios
+  { path: 'editar-productosyservicios', component: EditarProductosyserviciosComponent},//Editar productos y servicios
+  { path: 'agregar-productosyservicios', component: AgregarProductosyserviciosComponent},//Agregar productos y servicios
   { path: 'ver-papelera', component: VerPapeleraComponent},//Ver papelera
 
 

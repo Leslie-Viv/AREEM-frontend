@@ -38,6 +38,8 @@ import { EditarTipodeegresoComponent } from './administrador/editar-tipodeegreso
 import { AgregarTipodeegresoComponent } from './administrador/agregar-tipodeegreso/agregar-tipodeegreso.component';
 import { AgregarOrigendeegresoComponent } from './administrador/agregar-origendeegreso/agregar-origendeegreso.component';
 import { EditarOrigendeegresoComponent } from './administrador/editar-origendeegreso/editar-origendeegreso.component';
+import { EditarProductosyserviciosComponent } from './administrador/editar-productosyservicios/editar-productosyservicios.component';
+import { AgregarProductosyserviciosComponent } from './administrador/agregar-productosyservicios/agregar-productosyservicios.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import { EditarOrigendeegresoComponent } from './administrador/editar-origendeeg
     AgregarTipodeegresoComponent,
     AgregarOrigendeegresoComponent,
     EditarOrigendeegresoComponent,
+    EditarProductosyserviciosComponent,
+    AgregarProductosyserviciosComponent,
   ],
   imports: [
     BrowserModule,
