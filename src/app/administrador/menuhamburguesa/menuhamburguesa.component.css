@@ -3,6 +3,7 @@
     height: 100vh; /* Altura del contenedor */
     background-color: rgba(240, 240, 240, 0.062); /* Color de fondo del contenedor con opacidad */
     position: relative; /* Posición relativa para el contenido */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
   }
   
   
@@ -11,8 +12,10 @@
     width: 350px; /* Ancho del sidenav */
     background-color: rgb(250, 171, 214); /* Color de fondo del contenedor */
     position: relative; /* Posición relativa para el contenido */
-
+    max-height: calc(180vh - 80px); /* Ajusta 64px según el tamaño de tu barra de navegación superior si tienes una */
+    overflow-y: auto; /* Habilita el desplazamiento vertical si es necesario */
   }
+  
   
   /* Estilos para la lista de navegación dentro del sidenav */
   .mat-nav-list {
@@ -44,10 +47,24 @@
     font-size: 32px;
     opacity: 2; /* Ajusta la opacidad según sea necesario */
   }
-  .text{
-    font-size: 4px;
-    font-family: Arial, sans-serif; /* Tipo de letra Arial */
-    font-weight: bold; /* Hacer el texto más grueso */
-  }
 
+ 
+  .example-container {
+    font-size: 1px; /* Cambia el tamaño del texto del menú principal */
+  }
+  
+  .example-sidenav a {
+    font-size: 1px; /* Cambia el tamaño del texto de los elementos del menú */
+  }
+  
+  .text{
+    font-size: 18px; /* Cambia el tamaño del texto de los elementos del menú */
+  }
+  .example-sidenav {
+    max-height: calc(110vh - 64px); /* Ajusta 64px según el tamaño de tu barra de navegación superior si tienes una */
+    overflow-y: auto; /* Asegúrate de agregar esto también para habilitar el desplazamiento vertical si es necesario */
+  }
+  
+  
+  
   

@@ -1,38 +1,36 @@
-<mat-sidenav-container class="example-container text">
-    <mat-sidenav #sidenav class="example-sidenav">
-      <mat-nav-list class="text">
-        <a mat-list-item href="./ingresos-admin"> <mat-icon>attach_money</mat-icon> Ingresos</a>
-        <hr>
-        <a mat-list-item href="#"> <mat-icon>money</mat-icon>  Egresos</a>
-        <hr>
-        <a mat-list-item href="#">  <mat-icon>person</mat-icon> Usuarios</a>
-        <hr>
-        <a mat-list-item href="#">  <mat-icon>business</mat-icon>  Unidades de Negocio</a>
-        <hr>
-        <a mat-list-item href="#">   <mat-icon>domain</mat-icon> Empresas</a>
-        <hr>
-        <a mat-list-item href="#">  <mat-icon>category</mat-icon>  Tipo de Egreso</a>
-        <hr>
-        <a mat-list-item href="#">   <mat-icon>money</mat-icon> Origen de Egreso</a>
-        <hr>
-        <a mat-list-item href="#">  <mat-icon>local_shipping</mat-icon> Productos/Servicios</a>
-        <hr>
-        <a mat-list-item href="#">  <mat-icon>delete</mat-icon> Papelera de reciclaje</a>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav class="example-sidenav">
+    <mat-nav-list>
+      <a mat-list-item href="./ingresos-admin"> <mat-icon>attach_money</mat-icon> Ingresos</a>
+      <hr>
+      <a mat-list-item href="./ver-egresos"> <mat-icon>money</mat-icon>  Egresos</a>
+      <hr>
+      <a mat-list-item href="./nuevos-usuarios">  <mat-icon>person</mat-icon> Usuarios</a>
+      <hr>
+      <a mat-list-item href="./ver-unidad">  <mat-icon>business</mat-icon>  Unidades de Negocio</a>
+      <hr>
+      <a mat-list-item href="./ver-empresas">   <mat-icon>domain</mat-icon> Empresas</a>
+      <hr>
+      <a mat-list-item href="./ver-tipodeegreso">  <mat-icon>category</mat-icon>  Tipo de Egreso</a>
+      <hr>
+      <a mat-list-item href="./ver-origen"><mat-icon>money</mat-icon> Origen de Egreso</a>
+      <hr>
+      <a mat-list-item href="./ver-productosyservicios">  <mat-icon>local_shipping</mat-icon> Productos/Servicios</a>
+      <hr>
+      <a mat-list-item href="./ver-papelera">  <mat-icon>delete</mat-icon> Papelera de reciclaje</a>
 
-        <br>
-        <br>
-        <br>
-        
-        <a mat-list-item href="./inicio-admin">  <mat-icon>arrow_back</mat-icon> Regresar a la pagina principal</a>
-        <hr>
-        <!-- Agrega más opciones según sea necesario -->
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <button class="menu-toggle" (click)="sidenav.toggle()">
-          <mat-icon class="hamburger-icon">menu</mat-icon>
-        </button>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  
-  
+      <br>
+      <br>
+      <br>
+      
+      <a mat-list-item href="./inicio-admin">  <mat-icon>arrow_back</mat-icon> Regresar a la pagina principal</a>
+      <hr>
+      <!-- Agrega más opciones según sea necesario -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <button class="menu-toggle" (click)="sidenav.toggle()">
+        <mat-icon class="hamburger-icon">menu</mat-icon>
+      </button>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

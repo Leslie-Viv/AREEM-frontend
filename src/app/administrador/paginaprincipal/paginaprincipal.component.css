@@ -7,6 +7,12 @@
     /* Ajusta la posición y tamaño de la imagen de fondo */
     background-size: cover; /* La imagen se ajustará al tamaño del contenedor */
     background-position: center; /* La imagen se centrará dentro del contenedor */
+    /* Fija el contenedor en la parte superior de la ventana */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Opcional, si deseas que el contenedor se extienda hasta el borde derecho */
+    z-index: 980; /* Asegura que el contenedor esté por encima de otros elementos */
 }
 .title {
 
@@ -24,13 +30,13 @@
   .icon-and-text i {
     margin-right: 5px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
     position: absolute;
-    top: 5%;
+    top: 28%;
     left: 45%;
   }
   
-  .text {
+  .text-home{
     position: absolute;
-    top: 5%;
+    top: 30%;
     left: 47%;
     font-family: Arial, sans-serif; /* Tipo de letra Arial */
     font-size: 24px; /* Ajusta el tamaño del texto según tus necesidades */
@@ -53,18 +59,23 @@
     left: 31%;
     width: 39%; /* Ajusta el ancho de la imagen según sea necesario */
     height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* Opcional, si deseas que el contenedor se extienda hasta el borde derecho */
+  z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
   }
   .imagen-ingreso{
     position: absolute;
     top: 70%;
-    left: 15%;
+    left: 27%;
     width: 10%; /* Ajusta el ancho de la imagen según sea necesario */
     height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
   }
   .imagen-usuario{
     position: absolute;
     top: 70%;
-    left: 70%;
+    left: 65%;
     width: 9.5%; /* Ajusta el ancho de la imagen según sea necesario */
     height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
   }
@@ -72,7 +83,7 @@
     position: absolute;
     color:rgb(83, 77, 77);
     top: 65%;
-    left: 5%;
+    left: 15%;
     font-family: Arial, sans-serif; /* Tipo de letra Arial */
     font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
     font-weight: 1000;
@@ -81,7 +92,7 @@
     position: absolute;
     color:rgb(83, 77, 77);
     top: 65%;
-    left: 60%;
+    left: 55%;
     font-family: Arial, sans-serif; /* Tipo de letra Arial */
     font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
     font-weight: 1000;
@@ -101,9 +112,16 @@
     border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
     border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
     border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
-    position: absolute;
-    top: 92%;
-    left: 16%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Opcional, si deseas que el contenedor se extienda hasta el borde derecho */
+    z-index: 990; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+.boton-register{
+  position: absolute;
+  top: 92%;
+  left: 28%;
 }
 
 .boton-agregar-usuario {
@@ -121,7 +139,35 @@
     border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
     border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
     border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
-    position: absolute;
-    top: 92%;
-    left: 71%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Opcional, si deseas que el contenedor se extienda hasta el borde derecho */
+    z-index: 990; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+.boton-add{
+  position: absolute;
+  top: 92%;
+  left: 66%;
+}
+.imagen-centrada{
+  position: absolute;
+  top: 26%;
+  left: 31%;
+  width: 39%; /* Ajusta el ancho de la imagen según sea necesario */
+  height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+}
+
+.ver-perfil{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* Opcional, si deseas que el contenedor se extienda hasta el borde derecho */
+  z-index: 999; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+.verperfilposition{
+  position: absolute;
+  top: 20%;
+  left: 71%;
 }

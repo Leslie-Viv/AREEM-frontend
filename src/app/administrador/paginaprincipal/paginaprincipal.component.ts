@@ -16,4 +16,6 @@ export class PaginaprincipalComponent {
   Ingreso(): void {
     this.router.navigate(['/nuevo-ingreso']);
   }
+
+
 }

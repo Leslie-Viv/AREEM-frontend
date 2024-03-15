@@ -25,13 +25,14 @@
   .icon-and-text i {
     margin-right: 5px; /* Ajusta el espacio entre el icono y el texto según tus preferencias */
     position: absolute;
-    top: 5%;
+    top: 21%;
     left: 45%;
   }
   
+  
   .text {
     position: absolute;
-    top: 5%;
+    top: 25%;
     left: 47%;
     font-family: Arial, sans-serif; /* Tipo de letra Arial */
     font-size: 24px; /* Ajusta el tamaño del texto según tus necesidades */
@@ -47,116 +48,150 @@
     font-size: 25px; /* Ajusta el tamaño del texto según tus necesidades */
     font-weight: 1000;
   }
+
+  .container{
+ height: 80px;
+  }
+
+  .pink-background {
+    background-color: #ffc0cb; /* Color rosa pastel */
+  }
+
+   /* add */
+   .cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 10px;
+    padding: 0.7em 1.4em 0.7em 1.1em;
+    color: white;
+    background: #ad5389;
+    background: linear-gradient(0deg, rgb(33, 109, 30) 0%, rgb(65, 117, 34) 100%);
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #44be6798;
+    letter-spacing: 0.05em;
+    border-radius: 30em;
+  }
   
-  .imagen-centrada{
-    position: absolute;
-    top: 26%;
-    left: 31%;
-    width: 39%; /* Ajusta el ancho de la imagen según sea necesario */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  .cssbuttons-io-button svg {
+    margin-right: 6px;
   }
-  .imagen-ingreso{
-    position: absolute;
-    top: 70%;
-    left: 15%;
-    width: 10%; /* Ajusta el ancho de la imagen según sea necesario */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  
+  .cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 1.5em -0.5em #34aa5898;
   }
-  .imagen-usuario{
-    position: absolute;
-    top: 70%;
-    left: 70%;
-    width: 9.5%; /* Ajusta el ancho de la imagen según sea necesario */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+  
+  .cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #52d17698;
   }
-  .pregunta1{
+  
+  .positionadd{
     position: absolute;
-    color:rgb(83, 77, 77);
-    top: 65%;
-    left: 5%;
-    font-family: Arial, sans-serif; /* Tipo de letra Arial */
-    font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
-    font-weight: 1000;
+  top: 20px;
+  left: 1150px;
   }
-  .pregunta2{
-    position: absolute;
-    color:rgb(83, 77, 77);
-    top: 65%;
-    left: 60%;
-    font-family: Arial, sans-serif; /* Tipo de letra Arial */
-    font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
-    font-weight: 1000;
+
+  /* boton dowland  */
+
+  .button {
+    position: relative;
+    width: 150px;
+    height: 33px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #17795E;
+    background-color: #17795E;
+    overflow: hidden;
   }
-  .boton-registrar {
-    width: 100px; /* Ajusta el tamaño del botón según sea necesario */
-    height: 40px; /* Ajusta el tamaño del botón según sea necesario */
-    background-color: rgb(166, 181, 99); /* Establece el color de fondo del botón */
-    color: white; /* Establece el color del texto del botón */
-    font-size: 16px; /* Ajusta el tamaño de la fuente del botón según sea necesario */
-    border: none; /* Elimina el borde del botón */
-    cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
-    display: flex; /* Permite centrar el contenido verticalmente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    border-top-left-radius: 10px; /* Establece la esquina superior izquierda redonda */
-    border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
-    border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
-    border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
+  
+  .button, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .button .button__text {
+    display: inline-block; /* Para que el texto se comporte como un bloque */
+    text-align: center; /* Centrar el texto horizontalmente */
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  
+  .button .button__icon {
     position: absolute;
-    top: 92%;
-    left: 16%;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #17795E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button .svg {
+    width: 20px;
+    fill: #fff;
+  }
+  
+  .button:hover {
+    background: #17795E;
+  }
+  
+  .button:hover .button__text {
+    color: transparent;
+  }
+  
+  .button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .button:active .button__icon {
+    background-color: #146c54;
+  }
+  
+  .button:active {
+    border: 1px solid #20662f;
+  }
+
+  .position-dowland{
+    position: absolute;
+    top: 20px;
+    left: 980px;
+  }
+
+  /* botonregresar */
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #312e2e; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #333; /* Color de fondo al pasar el mouse */
+  }
+  
+  mat-icon {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    font-size: 24px; /* Tamaño del ícono */
+  }
+
+.positionback{
+ position: absolute;
+  top: 18px;
+  left: 17px;
 }
-
-.boton-agregar-usuario {
-    width: 100px; /* Ajusta el tamaño del botón según sea necesario */
-    height: 40px; /* Ajusta el tamaño del botón según sea necesario */
-    background-color: rgb(166, 181, 99); /* Establece el color de fondo del botón */
-    color: white; /* Establece el color del texto del botón */
-    font-size: 16px; /* Ajusta el tamaño de la fuente del botón según sea necesario */
-    border: none; /* Elimina el borde del botón */
-    cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
-    display: flex; /* Permite centrar el contenido verticalmente */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente */
-    border-top-left-radius: 10px; /* Establece la esquina superior izquierda redonda */
-    border-bottom-left-radius: 10px; /* Establece la esquina inferior izquierda redonda */
-    border-top-right-radius: 10px; /* Establece la esquina superior izquierda redonda */
-    border-bottom-right-radius: 10px; /* Establece la esquina inferior izquierda redonda */
-    position: absolute;
-    top: 92%;
-    left: 71%;
-}
-
-/* Estilos para la tabla */
-.custom-table {
-    border-collapse: collapse; /* Colapsar bordes de celda */
-    width: 100%; /* Ancho total de la tabla */
-    position: absolute;
-    top: 20%;
-    width: calc(100% - 40px); /* Ancho de la tabla reducido por el margen */
-  }
   
-  /* Estilos para las celdas de encabezado */
-  .custom-table th {
-    border: 2px solid #000; /* Borde sólido de 2px */
-    background-color: rgb(97, 185, 97); /* Color de fondo verde */
-    padding: 2px; /* Espaciado interno */
-    
-  }
-  
-  /* Estilos para las celdas de datos */
-  .custom-table td {
-    border: 2px solid #000; /* Borde sólido de 2px */
-    padding: 8px; /* Espaciado interno */
-    
-  }
-  
-  .table-container {
-    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
-
-  }
-  .boton-eliminar {
-    background-color: rgb(218, 58, 58); /* Establece el color de fondo del botón */
-
-  }
-  
+ 
+ 
