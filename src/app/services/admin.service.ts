@@ -104,6 +104,12 @@ export class AdminService {
       withCredentials: true
     });
   }
+
+  getVerPapeleraE() {
+    return this.http.get(this.api + '/api/verarchivadosi', {
+      withCredentials: true
+    });
+  }
   getVerIngresos() {
     return this.http.get(this.api + '/api/veringreso', {
       withCredentials: true
@@ -130,6 +136,11 @@ export class AdminService {
       withCredentials: true
     });
   }
+
+  eliminarProducto(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/eliminarproducto/${id}`);
+  }
+
 
   private url = 'http://localhost:8000/api';
 
@@ -170,6 +181,15 @@ agregarProducto(productoData: any): Observable<any> {
 }
 
 
+private apiUrl2 = 'http://localhost:8000/api/nuevaunidad';
 
+
+agregarUnidad(unidadData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl2, unidadData, { headers });
+}
   
 }

@@ -5,19 +5,13 @@ import { AdminService } from 'src/app/services/admin.service';
 export interface PapeleraIngreso{
   id:number;
   nombrecompleto:string;
-  nombreempresa:string;
-  anomesdereporte: string,
-  origenegreso:string;
-  tipodecuenta:string,
-  tipoegreso:string;
-  descripcionegreso:string;
-  gasto:string;
   nombreunidad:string;
+  anomesdereporte:string;
+  producto:string;
   fechareal:string;
   created_at:string;
   montototal:string;
-  user_id:string
-
+  user_id:string;
 }
 
 @Component({

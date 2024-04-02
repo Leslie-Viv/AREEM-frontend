@@ -162,6 +162,8 @@
   }
 
 
+
+
   /* botonregresar */
 
   button {
@@ -193,5 +195,18 @@
   top: 18px;
   left: 17px;
 }
+
+.btn {
+  padding: 5px 10px; /* Ajusta el espacio interno de los botones */
+  margin-right: 5px; /* Ajusta el espacio a la derecha de los botones */
+  margin-bottom: 5px; /* Ajusta el espacio por debajo de los botones */
+}
   
+.producto-cell {
+  width: 40%; /* Porcentaje del ancho de la tabla para las celdas de producto */
+}
+
+.button-cell {
+  width: 10%; /* Porcentaje del ancho de la tabla para las celdas de botón */
+}
  

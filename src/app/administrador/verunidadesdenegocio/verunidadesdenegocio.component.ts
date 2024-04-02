@@ -19,11 +19,15 @@ export class VerunidadesdenegocioComponent {
 
   constructor(private router: Router,private admin:AdminService) { }
 
+  ngOnInit(): void {
+    this.loadUnidades();
+  }
+
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
 
-  loadProductos(){
+  loadUnidades(){
     return this.admin.getVerUnidades().subscribe((data:{})=>{
       console.log(data);
       this.listUnidades=data;

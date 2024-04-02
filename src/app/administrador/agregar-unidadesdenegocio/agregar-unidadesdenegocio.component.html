@@ -1,18 +1,19 @@
-
+<form [formGroup]="unidadForm" (ngSubmit)="agregarunidad()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Agregar Unidad de Negocio</div>
     </div>
     <div class="card-body">
-      <form action="#">
         <div class="form-group">
-          <label for="username">Nombre Unidad de negocio:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="nombreunidad">Nombre Unidad de negocio:</label>
+          <input type="text" class="form-control" id="nombreunidad" formControlName="nombreunidad" placeholder="Ingresa la unidad de negocio">
+          <div *ngIf="unidadForm.get('nombreunidad')?.invalid && unidadForm.get('nombreunidad')?.touched"
+          class="error-message form-text text-danger">La unidad es requerida con minimo 3 caracteres </div>
         </div>
        <input type="submit" class="btn" value="agregar">  
-     </form>
-    </div>
-  </div>
+      </div>
+ </div>
+
   
 
 
@@ -29,4 +30,5 @@
       
       </div>
     </div>
-  </div> 
+  </div>
+</form> 
