@@ -11,7 +11,7 @@
 
       <input type="text" class="form-control" name="email" id="email"
       autocomplete="email" formControlName="email" maxlength="50" class="input" placeholder="Correo Electrónico">
-      <div *ngIf="validInput('email')" class="form-text text-danger">
+      <div *ngIf="validInput('email')" class="form-text  error-message">
         <span *ngIf="loginForm.get('email')?.hasError('required')">Email es requerido.</span>
         <span *ngIf="loginForm.get('email')?.hasError('maxlength')">Deben ser solo 30 caracteres.
         </span>
@@ -26,7 +26,7 @@
       <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
       class="form-control" placeholder="Write your password" id="password" class="input2" placeholder="Contraseña">
     </div>
-    <div *ngIf="validInput('password')" class="form-text text-danger">
+    <div *ngIf="validInput('password')" class="form-text  error-message-2">
       <span *ngIf="loginForm.get('password')?.hasError('required')">Password is required.</span>
       <span *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 10
           characters long.</span>

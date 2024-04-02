@@ -102,3 +102,16 @@
   box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
   background-color: white;
 }
+/* Validaciones */
+.error-message {
+
+  position: absolute; /* Establece la posición absoluta para el mensaje de error */
+  top: 61%; /* Ajusta la posición vertical del mensaje al centro de la pantalla */
+  left: 61%; /* Ajusta la posición horizontal del mensaje al centro de la pantalla */
+}
+.error-message-2 {
+
+   position: absolute; /* Establece la posición absoluta para el mensaje de error */
+   top: 73%; /* Ajusta la posición vertical del mensaje al centro de la pantalla */
+   left: 60%; /* Ajusta la posición horizontal del mensaje al centro de la pantalla */
+ }
