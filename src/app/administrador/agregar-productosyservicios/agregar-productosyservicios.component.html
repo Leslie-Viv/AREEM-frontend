@@ -1,16 +1,16 @@
-
+<form [formGroup]="productoForm" (ngSubmit)="agregarproducto()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Agregar Producto/Servicio</div>
     </div>
     <div class="card-body">
-      <form action="#">
         <div class="form-group">
-          <label for="username">Descripcion de producto o servicio:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="producto">Descripcion de producto o servicio:</label>
+          <input type="text" class="form-control" id="producto" formControlName="producto" placeholder="Ingresa el producto">
+          <div *ngIf="productoForm.get('producto')?.invalid && productoForm.get('producto')?.touched"
+          class="error-message form-text text-danger">El producto es requerido con minimo 3 caracteres </div>
         </div>
        <input type="submit" class="btn" value="agregar">  
-     </form>
     </div>
   </div>
   
@@ -30,4 +30,5 @@
       </div>
     </div>
   </div> 
+  </form>
 

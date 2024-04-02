@@ -108,6 +108,8 @@ export class AdminService {
     return this.http.patch<any>(`${this.url}/actualizarempresa/${id}`, datosActualizados);
   }
 
+  
+
   private apiUrl = 'http://localhost:8000/api/nuevaempresa';
 
 
@@ -117,6 +119,17 @@ agregarempresa(empresaData: any): Observable<any> {
   });
 
   return this.http.post<any>(this.apiUrl, empresaData, { headers });
+}
+
+private apiUrl1 = 'http://localhost:8000/api/nuevoproducto';
+
+
+agregarProducto(productoData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl1, productoData, { headers });
 }
 
 
