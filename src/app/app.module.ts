@@ -56,6 +56,9 @@ import { VerEgresosfinanzasComponent } from './finanzas/ver-egresosfinanzas/ver-
 import { NuevoEgresofinanzasComponent } from './finanzas/nuevo-egresofinanzas/nuevo-egresofinanzas.component';
 import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/nuevo-ingresofinanzas.component';
 import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -116,7 +119,10 @@ import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.co
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,14 @@
-
+<form [formGroup]="empresaForm" (ngSubmit)="actualizarEmpresa()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Editar una empresa</div>
     </div>
     <div class="card-body">
-      <form action="#">
         <div class="form-group">
-          <label for="username">Nombre de la Empresa:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="nombreempresa">Nombre de la Empresa:</label>
+          <input type="text" id="nombreempresa" formControlName="nombreempresa" class="form-control">
         </div>
-       <input type="submit" class="btn" value="editar">  
-     </form>
+        <button type="submit" class="btn form-control">Editar</button>
     </div>
   </div>
   
@@ -30,3 +28,4 @@
       </div>
     </div>
   </div> 
+</form>

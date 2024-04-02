@@ -43,8 +43,8 @@ import { VerPerfilfinanzasComponent } from './finanzas/ver-perfilfinanzas/ver-pe
 
 const routes: Routes = [
   // Otras rutas existentes
-  { path: 'inicio-admin', component: PaginaprincipalComponent }, // Nueva ruta
-  { path: '', component: LoginComponent, pathMatch: 'full' }, // Nueva ruta
+  { path: 'inicio-admin', component: PaginaprincipalComponent }, // Pagina principal admin
+  { path: '', component: LoginComponent, pathMatch: 'full' }, // Ruta raiz
   { path: 'ingresos-admin', component: IngresosComponent }, // Ver ingresos
   { path: 'editar-ingreso', component: EditarIngresoComponent }, // Registrar nuevo ingreso
   { path: 'nuevo-ingreso', component: NuevoIngresoComponent }, // Registrar nuevo ingreso

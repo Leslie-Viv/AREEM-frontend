@@ -1,3 +1,4 @@
+<form [formGroup]="loginForm" (ngSubmit)="startLogin();" >
 <div class="contenedor-con-fondo">
     <div class="contenedor-de-fondo-tarjeta">
         <!-- Contenido de tu componente -->
@@ -6,14 +7,33 @@
       <img src="../../assets/img/logoverde.png" class="imagen-logo" alt="Tu imagen">
       <h1 class="titulo">Iniciar Sesión</h1>
 
-      <button  (click)="navegarANuevaRuta()" class="boton-ingresar">Ingresar</button>
+      <button  type="submit" class="boton-ingresar" [disabled]="loginForm.invalid">Ingresar</button>
 
-      <input class="input" placeholder="Correo Electrónico">
-
-      <input class="input2" placeholder="Contraseña">
+      <input type="text" class="form-control" name="email" id="email"
+      autocomplete="email" formControlName="email" maxlength="50" class="input" placeholder="Correo Electrónico">
+      <div *ngIf="validInput('email')" class="form-text text-danger">
+        <span *ngIf="loginForm.get('email')?.hasError('required')">Email es requerido.</span>
+        <span *ngIf="loginForm.get('email')?.hasError('maxlength')">Deben ser solo 30 caracteres.
+        </span>
     </div>
+    <div *ngIf="loginForm.get('email')?.value && loginForm.hasError('alfanum')"
+    class="form-text text-danger">
+    Solo email verificado.
+</div>
+
+    
+
+      <input [type]="showPassword ? 'text' : 'password'" formControlName="password"
+      class="form-control" placeholder="Write your password" id="password" class="input2" placeholder="Contraseña">
+    </div>
+    <div *ngIf="validInput('password')" class="form-text text-danger">
+      <span *ngIf="loginForm.get('password')?.hasError('required')">Password is required.</span>
+      <span *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 10
+          characters long.</span>
+  </div>
    
 
   
     <!-- Contenido de tu componente -->
 </div>
+</form>

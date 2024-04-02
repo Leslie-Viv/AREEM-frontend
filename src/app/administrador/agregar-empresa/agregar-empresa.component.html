@@ -1,16 +1,18 @@
-
+<form [formGroup]="empresaForm" (ngSubmit)="agregarempresa()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Agregar Empresa</div>
     </div>
     <div class="card-body">
-      <form action="#">
+
         <div class="form-group">
-          <label for="username">Nombre de la Empresa:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="nombreempresa">Nombre de la Empresa:</label>
+          <input type="text" class="form-control" id="nombreempresa" formControlName="nombreempresa" placeholder="Ingresa la empresa">
+          <div *ngIf="empresaForm.get('nombreempresa')?.invalid && empresaForm.get('nombreempresa')?.touched"
+          class="error-message form-text text-danger">El nombre es requerido </div>
         </div>
-       <input type="submit" class="btn" value="agregar">  
-     </form>
+        <button type="submit" class="btn btn-primary" [disabled]="empresaForm.invalid">Agregar</button>
+     
     </div>
   </div>
   
@@ -30,3 +32,4 @@
       </div>
     </div>
   </div> 
+</form>
