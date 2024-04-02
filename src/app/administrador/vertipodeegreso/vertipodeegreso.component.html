@@ -34,11 +34,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Tipo_de_egreso}}</td>
-              <td>{{ element.Descripcion_egreso}}</td>
-              <td>{{ element.Es_gasto}}</td>
+            <tr *ngFor="let tipo of listTipos">
+              <td>{{ tipo.id }}</td>
+              <td>{{ tipo.tipoegreso}}</td>
+              <td>{{ tipo.descripcionegreso}}</td>
+              <td>{{ tipo.gasto}}</td>
               <td><button (click)="editartipo()" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>

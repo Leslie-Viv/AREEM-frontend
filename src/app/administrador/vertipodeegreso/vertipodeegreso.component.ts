@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 export interface Tipoegresos{
-  Id: number;
-  Tipo_de_egreso:string;
-  Descripcion_egreso:string;
-  Es_gasto:string;
+  id: number;
+  tipoegreso:string;
+  descripcionegreso:string;
+  gasto:string;
   
-
 }
 
 @Component({
@@ -16,16 +16,21 @@ export interface Tipoegresos{
   styleUrls: ['./vertipodeegreso.component.css']
 })
 export class VertipodeegresoComponent {
-  constructor(private router: Router) { }
+  listTipos:any=[];
+
+  constructor(private router: Router,private TipoS:AdminService) { }
 
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  dataSource: Tipoegresos[] = [
-    {Id:1,Tipo_de_egreso:'2',Descripcion_egreso:'2',Es_gasto:'no'},
-  ];
 
-  displayedColumns: string[] = ['Id','Tipo_de_egreso','Descripcion_egreso','Es_gasto'];
+  loadProductos(){
+    return this.TipoS.getVerTipos().subscribe((data:{})=>{
+      console.log(data);
+      this.listTipos=data;
+    })
+  }
+
 
   agregartipo(): void {
     this.router.navigate(['/agregar-tipo']);

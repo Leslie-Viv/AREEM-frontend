@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 export interface Unidaddenegocio{
-  Id: number;
-  Unidad_de_negocio:string;
+  id: number;
+  nombreunidad:string;
 
 }
 
@@ -14,16 +15,20 @@ export interface Unidaddenegocio{
   styleUrls: ['./verunidadesdenegocio.component.css']
 })
 export class VerunidadesdenegocioComponent {
-  constructor(private router: Router) { }
+  listUnidades:any=[];
+
+  constructor(private router: Router,private admin:AdminService) { }
 
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  dataSource: Unidaddenegocio[] = [
-    { Id:1, Unidad_de_negocio:'bodega'},
-  ];
 
-  displayedColumns: string[] = ['Id','Unidad_de_negocio'];
+  loadProductos(){
+    return this.admin.getVerUnidades().subscribe((data:{})=>{
+      console.log(data);
+      this.listUnidades=data;
+    })
+  }
 
   agregarunidad(): void {
     this.router.navigate(['/agregar-unidad']);

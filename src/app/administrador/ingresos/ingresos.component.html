@@ -26,28 +26,42 @@
         <thead>
           <tr>
             <th class="pink-background">Id</th>
-            <th class="pink-background">Usuario</th>
-            <th class="pink-background">Unidad de Negocio</th>
-            <th class="pink-background">Año mes de reporte</th>
-            <th class="pink-background">Fecha Real</th>
-            <th class="pink-background">Fecha Sistema</th>
-            <th class="pink-background">Monto Total</th>
-            <th class="pink-background">Editar</th>
-            <th class="pink-background">Eliminar</th>
+              <th class="pink-background">Nombre completo</th>
+              <th class="pink-background">Nombre empresa</th>
+              <th class="pink-background">Año mes de reporte</th>
+              <th class="pink-background">Cuenta Origen Egreso</th>
+              <th class="pink-background">Tipo de cuenta</th>
+              <th class="pink-background">Tipo de egreso</th>
+              <th class="pink-background">Descripcion egreso</th>
+              <th class="pink-background">Es gasto</th>
+              <th class="pink-background">Unidad de Negocio</th>
+              <th class="pink-background">Fecha real</th>
+              <th class="pink-background">Fecha Sistema</th>
+              <th class="pink-background">Monto total</th>
+              <th class="pink-background">User Id</th>
+              <th class="pink-background">Editar</th>
+              <th class="pink-background">Archivar</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let element of dataSource">
-            <td>{{ element.Id }}</td>
-            <td>{{ element.Usuario }}</td>
-            <td>{{ element.Unidad_de_Negocio }}</td>
-            <td>{{ element.Ano_mes_de_reporte }}</td>
-            <td>{{ element.Fecha_Real }}</td>
-            <td>{{ element.Fecha_Sistema }}</td>
-            <td>{{ element.Monto_Total }}</td>
+          <tr *ngFor="let ingreso of listIngresos">
+            <td>{{ ingreso.id }}</td>
+            <td>{{ ingreso.nombrecompleto }}</td>
+            <td>{{ ingreso.bombreempresa }}</td>
+            <td>{{ ingreso.anomesdereporte }}</td>
+            <td>{{ ingreso.origenegreso }}</td>
+            <td>{{ ingreso.tipodecuenta }}</td>
+            <td>{{ ingreso.tipoegreso }}</td>
+            <td>{{ ingreso.descripcionegreso }}</td>
+            <td>{{ ingreso.gasto }}</td>
+            <td>{{ ingreso.nombreunidad }}</td>
+            <td>{{ ingreso.fechareal}}</td>
+            <td>{{ ingreso.created_at}}</td>
+            <td>{{ ingreso.montototal}}</td>
+            <td>{{ ingreso.user_id}}</td>
             <td><button (click)="editar()" class="btn btn-danger">Editar</button></td>
-            <td><button class="btn btn-danger">Eliminar</button></td>
+            <td><button class="btn btn-danger">Archivar</button></td>
 
           </tr>
         </tbody>

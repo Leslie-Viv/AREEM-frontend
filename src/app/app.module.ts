@@ -59,6 +59,7 @@ import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.co
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos/ver-papeleraegresos.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     NuevoEgresofinanzasComponent,
     NuevoIngresofinanzasComponent,
     HomeFinanzasComponent,
+    VerPapeleraegresosComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 export interface Origen{
-  Id: number;
-  Cuenta_origen_egreso: string;
-  Tipo_de_cuenta:string;
+  id: number;
+  origenegreso: string;
+  tipodecuenta:string;
 }
 @Component({
   selector: 'app-ver-origen',
@@ -12,16 +13,19 @@ export interface Origen{
   styleUrls: ['./ver-origen.component.css']
 })
 export class VerOrigenComponent {
-  constructor(private router: Router) { }
+  listOrigenes:any=[];
+
+  constructor(private router: Router, private origen:AdminService) { }
 
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  dataSource: Origen[] = [
-    { Id:1,Cuenta_origen_egreso:'bodega',Tipo_de_cuenta:'1'},
-  ];
-
-  displayedColumns: string[] = ['Id','Cuenta_origen_egreso','Tipo_de_cuenta'];
+  loadProductos(){
+    return this.origen.getVerOrigen().subscribe((data:{})=>{
+      console.log(data);
+      this.listOrigenes=data;
+    })
+  }
 
   editarorigen(): void {
     this.router.navigate(['/editar-origen']);

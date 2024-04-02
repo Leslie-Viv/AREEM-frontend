@@ -34,10 +34,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Cuenta_origen_egreso}}</td>
-              <td>{{ element.Tipo_de_cuenta}}</td>
+            <tr *ngFor="let origen of listOrigenes">
+              <td>{{ origen.id }}</td>
+              <td>{{ origen.origenegreso}}</td>
+              <td>{{ origen.tipodecuenta}}</td>
               <td><button (click)="editarorigen()" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>

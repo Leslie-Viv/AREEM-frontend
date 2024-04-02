@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { AppSettings } from 'appsettings-json-reader';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Usuarios } from '../administrador/nuevosusuarios/nuevosusuarios.component';
 
 @Injectable({
   providedIn: 'root'
@@ -81,6 +82,42 @@ export class AdminService {
       withCredentials: true
     });
   }
+  getVerUnidades() {
+    return this.http.get(this.api + '/api/verunidad', {
+      withCredentials: true
+    });
+  }
+  getVerTipos() {
+    return this.http.get(this.api + '/api/vertipo', {
+      withCredentials: true
+    });
+  }
+
+  getVerOrigen() {
+    return this.http.get(this.api + '/api/verorigen', {
+      withCredentials: true
+    });
+  }
+
+  getVerPapeleraI() {
+    return this.http.get(this.api + '/api/verarchivadosi', {
+      withCredentials: true
+    });
+  }
+  getVerIngresos() {
+    return this.http.get(this.api + '/api/veringreso', {
+      withCredentials: true
+    });
+  }
+
+  getVerUsuarios(): Observable<Usuarios[]> {
+    return this.http.get<Usuarios[]>(this.api + '/api/verusuarios', {
+      withCredentials: true
+    });
+  }
+
+  
+  
 
   getVeringresos() {
     return this.http.get(this.api + '/api/veringreso', {

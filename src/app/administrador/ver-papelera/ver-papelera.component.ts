@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
-export interface Egresos{
-  Id: number;
-  Nombre_empresa: string;
-  Fecha_real: string;
-  Fecha_sistema: string;
-  Ano_mes_de_reporte: string;
-  Cuenta_origen_egreso: string;
-  Tipo_de_cuenta:string;
-  Tipo_de_egreso:string;
-  Descripcion_egreso:string;
-  Es_gasto:string;
-  Unidad_de_negocio:string;
-  Monto_total:string;
+export interface PapeleraIngreso{
+  id:number;
+  nombrecompleto:string;
+  nombreempresa:string;
+  anomesdereporte: string,
+  origenegreso:string;
+  tipodecuenta:string,
+  tipoegreso:string;
+  descripcionegreso:string;
+  gasto:string;
+  nombreunidad:string;
+  fechareal:string;
+  created_at:string;
+  montototal:string;
+  user_id:string
 
 }
 
@@ -23,16 +26,20 @@ export interface Egresos{
   styleUrls: ['./ver-papelera.component.css']
 })
 export class VerPapeleraComponent {
-  constructor(private router: Router) { }
+  listPapeleraI:any=[];
+
+  constructor(private router: Router, private papelera:AdminService) { }
 
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  dataSource: Egresos[] = [
-    { Id:1, Nombre_empresa: 'Juan', Fecha_real: '88', Fecha_sistema:'01', Ano_mes_de_reporte:'01',Cuenta_origen_egreso:'bodega',Tipo_de_cuenta:'1',Tipo_de_egreso:'2',Descripcion_egreso:'2',Es_gasto:'no',Unidad_de_negocio:'bodega', Monto_total:'00'},
-  ];
 
-  displayedColumns: string[] = ['Id','Nombre_empresa', 'Fecha_real','Fecha_sistema','Ano_mes_de_reporte','Cuenta_origen_egreso','Tipo_de_cuenta','Tipo_de_egreso','Descripcion_egreso','Es_gasto','Unidad_de_negocio','Monto_total'];
+  loadPapelera(){
+    return this.papelera.getVerPapeleraI().subscribe((data:{})=>{
+      console.log(data);
+      this.listPapeleraI=data;
+    })
+  }
 
 
 }

@@ -23,9 +23,8 @@
           <thead>
             <tr>
               <th class="pink-background">Id</th>
+              <th class="pink-background">Nombre completo</th>
               <th class="pink-background">Nombre empresa</th>
-              <th class="pink-background">Fecha real</th>
-              <th class="pink-background">Fecha Sistema</th>
               <th class="pink-background">Año mes de reporte</th>
               <th class="pink-background">Cuenta Origen Egreso</th>
               <th class="pink-background">Tipo de cuenta</th>
@@ -33,25 +32,30 @@
               <th class="pink-background">Descripcion egreso</th>
               <th class="pink-background">Es gasto</th>
               <th class="pink-background">Unidad de Negocio</th>
+              <th class="pink-background">Fecha real</th>
+              <th class="pink-background">Fecha Sistema</th>
               <th class="pink-background">Monto total</th>
+              <th class="pink-background">User Id</th>
               <th class="pink-background">Recuperar</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Nombre_empresa }}</td>
-              <td>{{ element.Fecha_real}}</td>
-              <td>{{ element.Fecha_sistema}}</td>
-              <td>{{ element.Ano_mes_de_reporte}}</td>
-              <td>{{ element.Cuenta_origen_egreso}}</td>
-              <td>{{ element.Tipo_de_cuenta}}</td>
-              <td>{{ element.Tipo_de_egreso}}</td>
-              <td>{{ element.Descripcion_egreso}}</td>
-              <td>{{ element.Es_gasto}}</td>
-              <td>{{ element.Unidad_de_negocio}}</td>
-              <td>{{ element.Monto_total}}</td>
+            <tr *ngFor="let ingresop of listPapeleraI">
+              <td>{{ ingresop.id }}</td>
+              <td>{{ ingresop.nombrecompleto }}</td>
+              <td>{{ ingresop.bombreempresa }}</td>
+              <td>{{ ingresop.anomesdereporte }}</td>
+              <td>{{ ingresop.origenegreso }}</td>
+              <td>{{ ingresop.tipodecuenta }}</td>
+              <td>{{ ingresop.tipoegreso }}</td>
+              <td>{{ ingresop.descripcionegreso }}</td>
+              <td>{{ ingresop.gasto }}</td>
+              <td>{{ ingresop.nombreunidad }}</td>
+              <td>{{ ingresop.fechareal}}</td>
+              <td>{{ ingresop.created_at}}</td>
+              <td>{{ ingresop.montototal}}</td>
+              <td>{{ ingresop.user_id}}</td>
               <td><button class="btn btn-second">Recuperar</button></td>
             </tr>
           </tbody>

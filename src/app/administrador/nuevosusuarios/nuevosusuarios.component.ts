@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
-export interface Usuarios{
-  Id: number;
-  Nombre_empresa: string;
-  Nombre_completo: string;
-  Email: string;
+export interface Usuarios {
+  id: number;
+  nombreempresa: string;
+  nombrecompleto: string;
+  email: string;
+  password: string;
+  rol_id: string;
 }
-
 
 @Component({
   selector: 'app-nuevosusuarios',
@@ -15,23 +17,31 @@ export interface Usuarios{
   styleUrls: ['./nuevosusuarios.component.css']
 })
 export class NuevosusuariosComponent {
-  constructor(private router: Router) { }
-
-  paginap(): void {
-    this.router.navigate(['/inicio-admin']);
+    listUsuarios: Usuarios[] = []; // Asegúrate de importar la interfaz Usuarios
+  
+    constructor(private router: Router, private UsuariosS: AdminService) {}
+  
+    paginap(): void {
+      this.router.navigate(['/inicio-admin']);
+    }
+  
+    ngOnInit(): void {
+      this.loadUsers();
+    }
+  
+    loadUsers() {
+      this.UsuariosS.getVerUsuarios().subscribe((data: any) => { // Aquí deberías cambiar `any` por el tipo adecuado si es diferente
+        console.log(data);
+        this.listUsuarios = Object.values(data.users); // Convierte el objeto en una matriz
+      });
+    }
+  
+    Nuevousuario(): void {
+      this.router.navigate(['/nuevo-usuario']);
+    }
+  
+    editarusuario(): void {
+      this.router.navigate(['/editar-usuario']);
+    }
   }
-  dataSource: Usuarios[] = [
-    { Id:1, Nombre_empresa: 'Juan', Nombre_completo: 'Pérez', Email:'admin@gmail.com' },
-  ];
-
-  displayedColumns: string[] = ['Id','Nombre_empresa', 'Nombre_completo','Email'];
-
-  Nuevousuario(): void {
-    this.router.navigate(['/nuevo-usuario']);
-  }
-
-  editarusuario(): void {
-    this.router.navigate(['/editar-usuario']);
-  }
-
-}
+  

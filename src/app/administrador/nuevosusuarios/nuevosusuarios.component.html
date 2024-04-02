@@ -34,11 +34,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Nombre_empresa }}</td>
-              <td>{{ element.Nombre_completo }}</td>
-              <td>{{ element.Email }}</td>
+            <tr *ngFor="let usuario of listUsuarios">
+              <td>{{ usuario.id }}</td>
+              <td>{{ usuario.nombreempresa }}</td>
+              <td>{{ usuario.nombrecompleto}}</td>
+              <td>{{ usuario.email }}</td>
               <td><button (click)="editarusuario()" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>

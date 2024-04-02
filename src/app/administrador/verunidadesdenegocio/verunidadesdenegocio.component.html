@@ -32,9 +32,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Unidad_de_negocio }}</td>
+            <tr *ngFor="let unidad of listUnidades">
+              <td>{{ unidad.id }}</td>
+              <td>{{ unidad.nombreunidad }}</td>
               <td><button (click)="editarunidad()" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>

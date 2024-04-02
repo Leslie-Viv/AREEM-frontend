@@ -40,6 +40,7 @@ import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/
 import { VerEgresosfinanzasComponent } from './finanzas/ver-egresosfinanzas/ver-egresosfinanzas.component';
 import { NuevoEgresofinanzasComponent } from './finanzas/nuevo-egresofinanzas/nuevo-egresofinanzas.component';
 import { VerPerfilfinanzasComponent } from './finanzas/ver-perfilfinanzas/ver-perfilfinanzas.component';
+import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos/ver-papeleraegresos.component';
 
 const routes: Routes = [
   // Otras rutas existentes
@@ -71,7 +72,8 @@ const routes: Routes = [
   { path: 'ver-productosyservicios', component: VerProductosyserviciosComponent},//Ver productos y servicios
   { path: 'editar-productosyservicios', component: EditarProductosyserviciosComponent},//Editar productos y servicios
   { path: 'agregar-productosyservicios', component: AgregarProductosyserviciosComponent},//Agregar productos y servicios
-  { path: 'ver-papelera', component: VerPapeleraComponent},//Ver papelera
+  { path: 'ver-papelera', component: VerPapeleraComponent},//Ver papelera ingresos
+  { path: 'ver-papelera-egresos', component: VerPapeleraegresosComponent},//Ver papelera egresos
 //Rutas gerente
   { path: 'home-gerente', component: HomegerenteComponent},//Pagina principal gerente
   { path: 'ver-ingresosgerente', component: VerIngresogerenteComponent},//Ver ingresos gerente
