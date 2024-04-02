@@ -76,6 +76,12 @@ export class AdminService {
     });
   }
 
+  getVerproductos() {
+    return this.http.get(this.api + '/api/verproducto', {
+      withCredentials: true
+    });
+  }
+
   getVeringresos() {
     return this.http.get(this.api + '/api/veringreso', {
       withCredentials: true

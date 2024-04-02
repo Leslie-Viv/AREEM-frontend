@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 export interface Productos{
-  Id: number;
-  Descripcion_servicio:string;
-
+  id:number;
+  producto:string;
 }
 @Component({
   selector: 'app-ver-productosyservicios',
@@ -12,16 +12,26 @@ export interface Productos{
   styleUrls: ['./ver-productosyservicios.component.css']
 })
 export class VerProductosyserviciosComponent {
-  constructor(private router: Router) { }
+  listProductos:any=[];
+
+
+  constructor(private router: Router, private admin:AdminService) { }
+
+  ngOnInit(): void {
+    this.loadProductos();
+  }
+
+  loadProductos(){
+    return this.admin.getVerproductos().subscribe((data:{})=>{
+      console.log(data);
+      this.listProductos=data;
+    })
+  }
 
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  dataSource: Productos[] = [
-    { Id:1, Descripcion_servicio:'bodega'},
-  ];
-
-  displayedColumns: string[] = ['Id','Descripcion_servicio'];
+  
 
   editarproducto(): void {
     this.router.navigate(['/editar-productosyservicios']);

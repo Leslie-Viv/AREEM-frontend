@@ -33,9 +33,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Descripcion_servicio }}</td>
+            <tr *ngFor="let producto of listProductos">
+              <td>{{ producto.id }}</td>
+              <td>{{ producto.producto}}</td>
               <td><button (click)="editarproducto()" class="btn btn-second">Editar</button></td>
               <td><button  class="btn btn-second">Eliminar</button></td>
             </tr>
