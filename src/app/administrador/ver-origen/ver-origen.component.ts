@@ -17,10 +17,14 @@ export class VerOrigenComponent {
 
   constructor(private router: Router, private origen:AdminService) { }
 
+  ngOnInit(): void {
+    this.loadOrigen();
+  }
+
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  loadProductos(){
+  loadOrigen(){
     return this.origen.getVerOrigen().subscribe((data:{})=>{
       console.log(data);
       this.listOrigenes=data;

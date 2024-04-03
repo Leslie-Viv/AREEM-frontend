@@ -26,21 +26,16 @@
         <thead>
           <tr>
             <th class="pink-background">Id</th>
-              <th class="pink-background">Nombre completo</th>
-              <th class="pink-background">Nombre empresa</th>
-              <th class="pink-background">Año mes de reporte</th>
-              <th class="pink-background">Cuenta Origen Egreso</th>
-              <th class="pink-background">Tipo de cuenta</th>
-              <th class="pink-background">Tipo de egreso</th>
-              <th class="pink-background">Descripcion egreso</th>
-              <th class="pink-background">Es gasto</th>
-              <th class="pink-background">Unidad de Negocio</th>
-              <th class="pink-background">Fecha real</th>
-              <th class="pink-background">Fecha Sistema</th>
-              <th class="pink-background">Monto total</th>
-              <th class="pink-background">User Id</th>
-              <th class="pink-background">Editar</th>
-              <th class="pink-background">Archivar</th>
+            <th class="pink-background">Nombre completo</th>
+            <th class="pink-background">Unidad de Negocio</th>
+            <th class="pink-background">Año mes de reporte</th>
+            <th class="pink-background">Producto</th>
+            <th class="pink-background">Fecha real</th>
+            <th class="pink-background">Fecha Sistema</th>
+            <th class="pink-background">Monto total</th>
+            <th class="pink-background">User Id</th>
+            <th class="pink-background">Editar</th>
+            <th class="pink-background">Archivar</th>
             <th></th>
           </tr>
         </thead>
@@ -48,14 +43,9 @@
           <tr *ngFor="let ingreso of listIngresos">
             <td>{{ ingreso.id }}</td>
             <td>{{ ingreso.nombrecompleto }}</td>
-            <td>{{ ingreso.bombreempresa }}</td>
-            <td>{{ ingreso.anomesdereporte }}</td>
-            <td>{{ ingreso.origenegreso }}</td>
-            <td>{{ ingreso.tipodecuenta }}</td>
-            <td>{{ ingreso.tipoegreso }}</td>
-            <td>{{ ingreso.descripcionegreso }}</td>
-            <td>{{ ingreso.gasto }}</td>
             <td>{{ ingreso.nombreunidad }}</td>
+            <td>{{ ingreso.anomesdereporte }}</td>
+            <td>{{ ingreso.producto }}</td>
             <td>{{ ingreso.fechareal}}</td>
             <td>{{ ingreso.created_at}}</td>
             <td>{{ ingreso.montototal}}</td>

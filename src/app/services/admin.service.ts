@@ -191,5 +191,27 @@ agregarUnidad(unidadData: any): Observable<any> {
 
   return this.http.post<any>(this.apiUrl2, unidadData, { headers });
 }
+
+private apiUrl3 = 'http://localhost:8000/api/nuevotipo';
+
+
+agregarTipo(tipoData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl3, tipoData, { headers });
+}
+
+private apiUrl4 = 'http://localhost:8000/api/nuevoorigen';
+
+
+agregarOrigen(origenData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl4, origenData, { headers });
+}
   
 }

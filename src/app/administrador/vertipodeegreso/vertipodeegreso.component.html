@@ -26,7 +26,11 @@
           <thead>
             <tr>
               <th class="pink-background">Id</th>
-              <th class="pink-background">Tipo de egreso</th>
+              <th class="pink-background">N1</th>
+              <th class="pink-background">N2</th>
+              <th class="pink-background">N3</th>
+              <th class="pink-background">N4</th>
+              <th class="pink-background">N5</th>
               <th class="pink-background">Descripción de egreso</th>
               <th class="pink-background">Es gasto</th>
               <th class="pink-background">Editar</th>
@@ -36,7 +40,11 @@
           <tbody>
             <tr *ngFor="let tipo of listTipos">
               <td>{{ tipo.id }}</td>
-              <td>{{ tipo.tipoegreso}}</td>
+              <td>{{ tipo.N1 }}</td>
+              <td>{{ tipo.N2 }}</td>
+              <td>{{ tipo.N3 }}</td>
+              <td>{{ tipo.N4 }}</td>
+              <td>{{ tipo.N5 }}</td>
               <td>{{ tipo.descripcionegreso}}</td>
               <td>{{ tipo.gasto}}</td>
               <td><button (click)="editartipo()" class="btn btn-second">Editar</button></td>

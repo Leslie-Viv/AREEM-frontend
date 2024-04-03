@@ -1,24 +1,62 @@
-
+<form [formGroup]="tipoForm" (ngSubmit)="agregartipo()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Agregar Tipo de Egreso</div>
     </div>
     <div class="card-body">
-      <form action="#">
         <div class="form-group">
-          <label for="username">Tipo de egreso:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="N1">N1:</label>
+          <input type="text" class="form-control" id="N1" formControlName="N1" placeholder="">
+          <div *ngIf="tipoForm.get('N1')?.invalid && tipoForm.get('N1')?.touched"
+          class="error-message form-text text-danger">El N1 es requerido </div>
         </div>
         <div class="form-group">
-          <label for="username">Descripción de egreso:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="N2">N2:</label>
+          <input type="text" class="form-control" id="N2" formControlName="N2" placeholder="">
+          <div *ngIf="tipoForm.get('N2')?.invalid && tipoForm.get('N2')?.touched"
+          class="error-message form-text text-danger">El N2 es requerido </div>
         </div>
         <div class="form-group">
-          <label for="username">Es Gasto:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="N3">N3:</label>
+          <input type="text" class="form-control" id="N3" formControlName="N3" placeholder="">
+          <div *ngIf="tipoForm.get('N3')?.invalid && tipoForm.get('N3')?.touched"
+          class="error-message form-text text-danger">El N3 es requerido </div>
         </div>
+        <div class="form-group">
+          <label for="N4">N4:</label>
+          <input type="text" class="form-control" id="N4" formControlName="N4" placeholder="">
+          <div *ngIf="tipoForm.get('N4')?.invalid && tipoForm.get('N4')?.touched"
+          class="error-message form-text text-danger">El N4 es requerido </div>
+        </div>
+        <div class="form-group">
+          <label for="N5">N5:</label>
+          <input type="text" class="form-control" id="N5" formControlName="N5" placeholder="">
+          <div *ngIf="tipoForm.get('N5')?.invalid && tipoForm.get('N5')?.touched"
+          class="error-message form-text text-danger">El N5 es requerido </div>
+        </div>
+        <div class="form-group">
+          <label for="descripcionegreso">Descripción de egreso:</label>
+          <input type="text" class="form-control" id="descripcionegreso" formControlName="descripcionegreso" placeholder="Describe el egreso">
+          <div *ngIf="tipoForm.get('descripcionegreso')?.invalid && tipoForm.get('descripcionegreso')?.touched"
+          class="error-message form-text text-danger">La descripcion de egreso es requerido </div>
+        </div>
+        <div class="form-group">
+          <label for="gasto">Es Gasto:</label>
+          <div class="input-group">
+            <select class="form-control" formControlName="gasto">
+              <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Opciones</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <mat-icon>arrow_drop_down</mat-icon>
+              </span>
+            </div>
+          </div>
+        </div>
+          
        <input type="submit" class="btn" value="agregar">  
-     </form>
     </div>
   </div>
   
@@ -38,3 +76,4 @@
       </div>
     </div>
   </div> 
+</form>

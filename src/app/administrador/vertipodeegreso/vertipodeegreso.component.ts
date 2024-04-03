@@ -20,11 +20,15 @@ export class VertipodeegresoComponent {
 
   constructor(private router: Router,private TipoS:AdminService) { }
 
+  ngOnInit(): void {
+    this.loadTipos();
+  }
+
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
 
-  loadProductos(){
+  loadTipos(){
     return this.TipoS.getVerTipos().subscribe((data:{})=>{
       console.log(data);
       this.listTipos=data;

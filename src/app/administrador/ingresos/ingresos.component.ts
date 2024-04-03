@@ -1,22 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
-export interface PapeleraIngreso{
+
+export interface Ingreso{
   id:number;
   nombrecompleto:string;
-  nombreempresa:string;
-  anomesdereporte: string,
-  origenegreso:string;
-  tipodecuenta:string,
-  tipoegreso:string;
-  descripcionegreso:string;
-  gasto:string;
   nombreunidad:string;
+  anomesdereporte:string;
+  producto:string;
   fechareal:string;
   created_at:string;
   montototal:string;
-  user_id:string
-
+  user_id:string;
 }
 
 @Component({
