@@ -3,6 +3,21 @@ import { Observable, Subject, tap } from 'rxjs';
 import { AppSettings } from 'appsettings-json-reader';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuarios } from '../administrador/nuevosusuarios/nuevosusuarios.component';
+export{UsuariosResponse,Usuario};
+interface Usuario{
+  users:{
+    id:number;
+    nombrecompleto:string;
+    nombreempresa:string;
+    rol_id:string;
+    email:string;
+  }
+}
+interface UsuariosResponse{
+  usuarios: Usuario[];
+  links:any;
+  meta:any;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +60,7 @@ export class AdminService {
     }).pipe(
       tap(() => {
         this.getAuth.emit(true); // Emitir un evento para indicar que el usuario está autenticado
-        // this.setAuthStatus(true);
+        this.setAuthStatus(true);
         this.isLoggedIn = true;
       })
     );
@@ -82,11 +97,25 @@ export class AdminService {
       withCredentials: true
     });
   }
+
+  getVernombreproductos(): Observable<string[]> {
+    return this.http.get<string[]>(this.api + '/api/verproducto', {
+      withCredentials: true
+    });
+  }
+
   getVerUnidades() {
     return this.http.get(this.api + '/api/verunidad', {
       withCredentials: true
     });
   }
+
+  getVernombreunidades(): Observable<string[]> {
+    return this.http.get<string[]>(this.api + '/api/verunidad', {
+      withCredentials: true
+    });
+  }
+
   getVerTipos() {
     return this.http.get(this.api + '/api/vertipo', {
       withCredentials: true
@@ -118,6 +147,12 @@ export class AdminService {
 
   getVerUsuarios(): Observable<Usuarios[]> {
     return this.http.get<Usuarios[]>(this.api + '/api/verusuarios', {
+      withCredentials: true
+    });
+  }
+
+  getVernombreusuarios(): Observable<string[]> {
+    return this.http.get<string[]>(this.api + '/api/verusuarios', {
       withCredentials: true
     });
   }
@@ -212,6 +247,16 @@ agregarOrigen(origenData: any): Observable<any> {
   });
 
   return this.http.post<any>(this.apiUrl4, origenData, { headers });
+}
+private apiUrl5 = 'http://localhost:8000/api/nuevoingreso';
+
+
+agregarIngreso(ingresoData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl5, ingresoData, { headers });
 }
   
 }

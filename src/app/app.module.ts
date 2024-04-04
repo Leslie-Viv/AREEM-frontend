@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -33,7 +32,6 @@ import { EditarUsuarioComponent } from './administrador/editar-usuario/editar-us
 import { EditarUnidadesdenegocioComponent } from './administrador/editar-unidadesdenegocio/editar-unidadesdenegocio.component';
 import { AgregarUnidadesdenegocioComponent } from './administrador/agregar-unidadesdenegocio/agregar-unidadesdenegocio.component';
 import { AgregarEmpresaComponent } from './administrador/agregar-empresa/agregar-empresa.component';
-import { EditarEmpresaComponent } from './administrador/editar-empresa/editar-empresa.component';
 import { EditarTipodeegresoComponent } from './administrador/editar-tipodeegreso/editar-tipodeegreso.component';
 import { AgregarTipodeegresoComponent } from './administrador/agregar-tipodeegreso/agregar-tipodeegreso.component';
 import { AgregarOrigendeegresoComponent } from './administrador/agregar-origendeegreso/agregar-origendeegreso.component';
@@ -59,7 +57,11 @@ import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.co
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DatePipe } from '@angular/common'; // Importa DatePipe
 import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos/ver-papeleraegresos.component';
+import { AdminModule } from './administrador/admin.module';
+
 
 @NgModule({
   declarations: [
@@ -87,7 +89,6 @@ import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos
     EditarUnidadesdenegocioComponent,
     AgregarUnidadesdenegocioComponent,
     AgregarEmpresaComponent,
-    EditarEmpresaComponent,
     EditarTipodeegresoComponent,
     AgregarTipodeegresoComponent,
     AgregarOrigendeegresoComponent,
@@ -124,9 +125,13 @@ import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos
     MatTableModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    AdminModule
   ],
-  providers: [],
+  providers: [
+    DatePipe 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
