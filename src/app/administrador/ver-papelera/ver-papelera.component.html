@@ -46,7 +46,7 @@
               <td>{{ ingresop.created_at}}</td>
               <td>{{ ingresop.montototal}}</td>
               <td>{{ ingresop.user_id}}</td>
-              <td><button class="btn btn-second">Recuperar</button></td>
+              <td><button (click)="recuperarIngreso(ingresop.id)" class="btn btn-second">Recuperar</button></td>
             </tr>
           </tbody>
         </table>

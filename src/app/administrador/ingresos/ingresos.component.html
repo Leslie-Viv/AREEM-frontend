@@ -51,7 +51,7 @@
             <td>{{ ingreso.montototal}}</td>
             <td>{{ ingreso.user_id}}</td>
             <td><button (click)="editar()" class="btn btn-danger">Editar</button></td>
-            <td><button class="btn btn-danger">Archivar</button></td>
+            <td><button (click)="archivarIngreso(ingreso.id)" class="btn btn-danger">Archivar</button></td>
 
           </tr>
         </tbody>

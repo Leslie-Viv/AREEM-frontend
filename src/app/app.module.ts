@@ -55,7 +55,7 @@ import { NuevoEgresofinanzasComponent } from './finanzas/nuevo-egresofinanzas/nu
 import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/nuevo-ingresofinanzas.component';
 import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DatePipe } from '@angular/common'; // Importa DatePipe
@@ -127,7 +127,8 @@ import { AdminModule } from './administrador/admin.module';
     ReactiveFormsModule,
     MatDialogModule,
     MatFormFieldModule,
-    AdminModule
+    AdminModule,
+    FormsModule
   ],
   providers: [
     DatePipe 

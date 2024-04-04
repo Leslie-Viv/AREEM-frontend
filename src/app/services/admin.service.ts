@@ -104,6 +104,12 @@ export class AdminService {
     });
   }
 
+  getVernombreempresas(): Observable<string[]> {
+    return this.http.get<string[]>(this.api + '/api/verempresa', {
+      withCredentials: true
+    });
+  }
+
   getVerUnidades() {
     return this.http.get(this.api + '/api/verunidad', {
       withCredentials: true
@@ -135,12 +141,18 @@ export class AdminService {
   }
 
   getVerPapeleraE() {
-    return this.http.get(this.api + '/api/verarchivadosi', {
+    return this.http.get(this.api + '/api/verarchivadose', {
       withCredentials: true
     });
   }
   getVerIngresos() {
     return this.http.get(this.api + '/api/veringreso', {
+      withCredentials: true
+    });
+  }
+
+  getVerEgresos() {
+    return this.http.get(this.api + '/api/veregreso', {
       withCredentials: true
     });
   }
@@ -151,14 +163,20 @@ export class AdminService {
     });
   }
 
-  getVernombreusuarios(): Observable<string[]> {
-    return this.http.get<string[]>(this.api + '/api/verusuarios', {
-      withCredentials: true
-    });
+  archivarIngreso(id: number): Observable<any> {
+    const url = `${this.url}/archivaringreso/${id}`;
+    return this.http.post<any>(url, {});
   }
 
-  
-  
+  archivarEgreso(id: number): Observable<any> {
+    const url = `${this.url}/archivaregreso/${id}`;
+    return this.http.post<any>(url, {});
+  }
+
+  recuperarIngreso(id: number): Observable<any> {
+    const url = `${this.url}/recuperaringreso/${id}`;
+    return this.http.post<any>(url, {});
+  }
 
   getVeringresos() {
     return this.http.get(this.api + '/api/veringreso', {
@@ -259,4 +277,15 @@ agregarIngreso(ingresoData: any): Observable<any> {
   return this.http.post<any>(this.apiUrl5, ingresoData, { headers });
 }
   
+
+private apiUrl6 = 'http://localhost:8000/api/nuevoegreso';
+
+
+agregarEgreso(egresoData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl6, egresoData, { headers });
+}
 }

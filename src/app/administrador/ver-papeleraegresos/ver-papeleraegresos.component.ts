@@ -3,20 +3,24 @@ import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 export interface PapeleraEgreso{
-  id:number;
-  nombrecompleto:string;
-  nombreempresa:string;
-  anomesdereporte: string,
-  origenegreso:string;
-  tipodecuenta:string,
-  tipoegreso:string;
+  id: number;
+  nombrecompleto: string;
+  nombreempresa: string;
+  anomesdereporte: string;
+  origenegreso: string;
+  tipodecuenta: string;
+  N1: string;
+  N2: string;
+  N3: string;
+  N4: string;
+  N5: string;
   descripcionegreso:string;
   gasto:string;
   nombreunidad:string;
-  fechareal:string;
   created_at:string;
+  fechareal:string;
   montototal:string;
-  user_id:string
+  user_id:string;
 
 }
 
@@ -31,11 +35,15 @@ export class VerPapeleraegresosComponent {
   
   constructor(private router: Router, private papelera:AdminService) { }
 
+  ngOnInit(): void {
+    this.loadPapeleraE();
+  }
+
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
 
-  loadPapelera(){
+  loadPapeleraE(){
     return this.papelera.getVerPapeleraE().subscribe((data:{})=>{
       console.log(data);
       this.listPapeleraE=data;

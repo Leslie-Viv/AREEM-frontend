@@ -218,3 +218,27 @@
   top: 18px;
   left: 17px;
 }
+ /* Formulario */
+ .selected-data-container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Puedes agregar más estilos según tus necesidades */
+
+
