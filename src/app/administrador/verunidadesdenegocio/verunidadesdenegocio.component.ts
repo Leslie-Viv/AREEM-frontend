@@ -60,7 +60,7 @@ export class VerunidadesdenegocioComponent {
               headerRows: 1,
               widths: [100, 400],
               body: [
-                ['id', 'nombreunidad'],
+                ['id', 'Unidad de Negocio'],
                 ...unidades.map((u: any) => [u.id, u.nombreunidad]),
               ],
             },

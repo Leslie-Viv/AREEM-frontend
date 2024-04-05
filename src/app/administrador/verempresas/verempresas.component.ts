@@ -69,7 +69,7 @@ export class VerempresasComponent implements OnInit{
               headerRows: 1,
               widths: [100, 400],
               body: [
-                ['id', 'nombreempresa'],
+                ['id', 'Nombre de Empresa'],
                 ...empresas.map((e: any) => [e.id, e.nombreempresa]),
               ],
             },

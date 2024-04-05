@@ -99,7 +99,7 @@ export class VerProductosyserviciosComponent {
               headerRows: 1,
               widths: [100, 400],
               body: [
-                ['id', 'producto'],
+                ['id', 'Nombre de producto'],
                 ...productos.map((p: any) => [p.id, p.producto]),
               ],
             },

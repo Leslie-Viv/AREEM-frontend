@@ -215,6 +215,12 @@ export class AdminService {
   obtenerUnidadPorId(id: number): Observable<any>{
     return this.http.get<any>(`${this.url}/obtenerunidad/${id}`);
   }
+  obtenerTipoPorId(id: number): Observable<any>{
+    return this.http.get<any>(`${this.url}/obtenertipo/${id}`);
+  }
+  obtenerOrigenPorId(id: number): Observable<any>{
+    return this.http.get<any>(`${this.url}/obtenerorigen/${id}`);
+  }
 
 
   actualizarempresa(id: number, datosActualizados: any): Observable<any> {
@@ -227,6 +233,13 @@ export class AdminService {
 
   actualizarunidad(id: number, datosActualizados: any): Observable<any> {
     return this.http.patch<any>(`${this.url}/actualizarunidad/${id}`, datosActualizados);
+  }
+
+  actualizartipo(id: number, datosActualizados: any): Observable<any> {
+    return this.http.patch<any>(`${this.url}/actualizartipo/${id}`, datosActualizados);
+  }
+  actualizarorigen(id: number, datosActualizados: any): Observable<any> {
+    return this.http.patch<any>(`${this.url}/actualizarorigen/${id}`, datosActualizados);
   }
 
   
