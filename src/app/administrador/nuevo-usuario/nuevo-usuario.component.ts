@@ -18,9 +18,9 @@ export class NuevoUsuarioComponent {
     ) {
       this.usuarioForm = this.fb.group({
         nombreempresa: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
-        nombrecompleto: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
-        email: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
-        password: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
+        nombrecompleto: ['', Validators.required],
+        email: ['', Validators.required],
+        password: ['', Validators.required],
         rol_id: ['', Validators.required],
       });
      }
@@ -43,31 +43,55 @@ export class NuevoUsuarioComponent {
   }
 
   agregarUsuario() {
-    const datosNuevoUsuario = this.usuarioForm.value;
+    const formData = new FormData();
 
-    this.usuarioS.agregarUsuario(datosNuevoUsuario).subscribe(
-      response => {
-        console.log('Usuario agregado correctamente', response);
-        // Recargar la página después de agregar el agremiado
-        Swal.fire({
-          icon: 'success',
-          text: 'Usuario agregado correctamente',
-          showConfirmButton: true
-        });
-        this.usuarioForm.reset();
+    formData.append('nombreempresa', this.usuarioForm.get('nombreempresa')?.value);
+    formData.append('nombrecompleto', this.usuarioForm.get('nombrecompleto')?.value);
+    formData.append('email', this.usuarioForm.get('email')?.value);
+    formData.append('password', this.usuarioForm.get('password')?.value);
+    formData.append('rol_id', this.usuarioForm.get('rol_id')?.value);
+
+    this.usuarioS.agregarUsuario(formData).subscribe(
+      (response) => {
+        console.log('Backend responds:', response);
+        this.usuarioS.adminsSubject.next();
+
       },
-      error => {
-        console.error('Error al agregar usuario', error);
-        // Manejar el error si es necesario
-        Swal.fire({
-          icon: 'error',
-          title: '¡Error!',
-          text: 'Al agregar usuario',
-          showConfirmButton: true
-        });
+      (error) => {
+        console.error('Error backend:', error);
       }
     );
+    this.usuarioForm.reset();
   }
+
+
+
+  // agregarUsuario() {
+  //   const datosNuevoUsuario = this.usuarioForm.value;
+
+  //   this.usuarioS.agregarUsuario(datosNuevoUsuario).subscribe(
+  //     response => {
+  //       console.log('Usuario agregado correctamente', response);
+  //       // Recargar la página después de agregar el agremiado
+  //       Swal.fire({
+  //         icon: 'success',
+  //         text: 'Usuario agregado correctamente',
+  //         showConfirmButton: true
+  //       });
+  //       this.usuarioForm.reset();
+  //     },
+  //     error => {
+  //       console.error('Error al agregar usuario', error);
+  //       // Manejar el error si es necesario
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: '¡Error!',
+  //         text: 'Al agregar usuario',
+  //         showConfirmButton: true
+  //       });
+  //     }
+  //   );
+  // }
 
 
 }

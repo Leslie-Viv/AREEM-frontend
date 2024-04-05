@@ -1,8 +1,9 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Observable, Subject, tap } from 'rxjs';
+import { Observable, Subject, tap, throwError } from 'rxjs';
 import { AppSettings } from 'appsettings-json-reader';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Usuarios } from '../administrador/nuevosusuarios/nuevosusuarios.component';
+import { catchError } from 'rxjs/operators';
 export{UsuariosResponse,Usuario};
 interface Usuario{
   users:{
@@ -65,6 +66,25 @@ export class AdminService {
       })
     );
   }
+
+  agregarUsuario(user: any) {
+    return this.http.post(this.api + '/api/nuevousuario', user, {
+      withCredentials: true
+    });
+  }
+
+
+
+  // agregarUsuario(user: any): Observable<any> {
+  //   return this.http.post(this.api + '/api/nuevousuario', user, this.httpOptions)
+  //     .pipe(
+  //       catchError(error => {
+  //         console.error('Error en la solicitud agregarUsuarios:', error);
+  //         throw error; // Propagar el error para que sea manejado en el lugar donde se llama a este método
+  //       })
+  //     );
+  // }
+  
 
   getUserInfo() {
     return this.http.get(this.api + '/api/profileadmin', {
@@ -164,14 +184,8 @@ export class AdminService {
       withCredentials: true
     });
   }
-  private apiUrl7 = `${this.api}/nuevousuario`;
-  agregarUsuario(usuarioData: Usuarios): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-
-    return this.http.post<any>(this.apiUrl7, usuarioData, { headers });
-  }
+ 
+   
 
 
 
