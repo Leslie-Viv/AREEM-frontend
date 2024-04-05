@@ -1,59 +1,71 @@
 <div class="contenedor-con-fondo position-fixed top-0 start-0 w-100">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <span class="icon-and-text">
-            <i class="material-icons">money</i>
-            <span class="text">Egresos</span>
-          </span>
-          <button  (click)="agregaregreso()" class="cssbuttons-io-button positionadd">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
-          </button>
-          <button (click)="paginap()" class="positionback"><mat-icon>arrow_back</mat-icon>Regresar</button>
-        </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <span class="icon-and-text">
+          <i class="material-icons">money</i>
+          <span class="text">Egresos</span>
+        </span>
+        <button  (click)="agregaregreso()" class="cssbuttons-io-button positionadd">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+        </button>
+        <button (click)="paginap()" class="positionback"><mat-icon>arrow_back</mat-icon>Regresar</button>
       </div>
     </div>
+  </div>
+
+
   
-  
-    
-    <div class="container mt-4">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th class="pink-background">Id</th>
-              <th class="pink-background">Nombre empresa</th>
-              <th class="pink-background">Fecha real</th>
-              <th class="pink-background">Fecha Sistema</th>
-              <th class="pink-background">Año mes de reporte</th>
-              <th class="pink-background">Cuenta Origen Egreso</th>
-              <th class="pink-background">Tipo de cuenta</th>
-              <th class="pink-background">Tipo de egreso</th>
-              <th class="pink-background">Descripcion egreso</th>
-              <th class="pink-background">Es gasto</th>
-              <th class="pink-background">Unidad de Negocio</th>
-              <th class="pink-background">Monto total</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let element of dataSource">
-              <td>{{ element.Id }}</td>
-              <td>{{ element.Nombre_empresa }}</td>
-              <td>{{ element.Fecha_real}}</td>
-              <td>{{ element.Fecha_sistema}}</td>
-              <td>{{ element.Ano_mes_de_reporte}}</td>
-              <td>{{ element.Cuenta_origen_egreso}}</td>
-              <td>{{ element.Tipo_de_cuenta}}</td>
-              <td>{{ element.Tipo_de_egreso}}</td>
-              <td>{{ element.Descripcion_egreso}}</td>
-              <td>{{ element.Es_gasto}}</td>
-              <td>{{ element.Unidad_de_negocio}}</td>
-              <td>{{ element.Monto_total}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="container mt-4">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="pink-background">Id</th>
+            <th class="pink-background">Nombre completo</th>
+            <th class="pink-background">Nombre empresa</th>
+            <th class="pink-background">Año mes de reporte</th>
+            <th class="pink-background">Cuenta Origen Egreso</th>
+            <th class="pink-background">Tipo de cuenta</th>      
+            <th class="pink-background">N1</th>
+            <th class="pink-background">N2</th>
+            <th class="pink-background">N3</th>
+            <th class="pink-background">N4</th>
+            <th class="pink-background">N5</th>
+            <th class="pink-background">Descripcion egreso</th>
+            <th class="pink-background">Es gasto</th>
+            <th class="pink-background">Unidad de Negocio</th>
+            <th class="pink-background">Fecha Sistema</th>
+            <th class="pink-background">Fecha real</th>
+            <th class="pink-background">Monto total</th>
+            <th class="pink-background">Clave de usuario</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let egreso of listEgresosFinanzas">
+            <td>{{ egreso.id }}</td>
+            <td>{{ egreso.nombrecompleto }}</td>
+            <td>{{ egreso.nombreempresa }}</td>
+            <td>{{ egreso.anomesdereporte }}</td>
+            <td>{{ egreso.origenegreso }}</td>
+            <td>{{ egreso.tipodecuenta }}</td>
+            <td>{{ egreso.N1 }}</td>
+            <td>{{ egreso.N2 }}</td>
+            <td>{{ egreso.N3 }}</td>
+            <td>{{ egreso.N4 }}</td>
+            <td>{{ egreso.N5 }}</td>
+            <td>{{ egreso.descripcionegreso }}</td>
+            <td>{{ egreso.gasto }}</td>
+            <td>{{ egreso.nombreunidad }}</td>
+            <td>{{ egreso.created_at }}</td>
+            <td>{{ egreso.fechareal }}</td>
+            <td>{{ egreso.montototal }}</td>
+            <td>{{ egreso.user_id}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
     </div>
-    
+  </div>
   
