@@ -47,30 +47,30 @@ const routes: Routes = [
   { path: 'inicio-admin', component: PaginaprincipalComponent }, // Pagina principal admin
   { path: '', component: LoginComponent, pathMatch: 'full' }, // Ruta raiz
   { path: 'ingresos-admin', component: IngresosComponent }, // Ver ingresos
-  { path: 'editar-ingreso', component: EditarIngresoComponent }, // Registrar nuevo ingreso
+  { path: 'editar-ingreso/:id', component: EditarIngresoComponent }, // Registrar nuevo ingreso
   { path: 'nuevo-ingreso', component: NuevoIngresoComponent }, // Registrar nuevo ingreso
   { path: 'nuevos-usuarios', component: NuevosusuariosComponent }, // Verusuarios
   { path: 'nuevo-usuario', component: NuevoUsuarioComponent}, // Agregar nuevo usuario
-  { path: 'editar-usuario', component: EditarUsuarioComponent}, // Editar usuario
+  { path: 'editar-usuario/:id', component: EditarUsuarioComponent}, // Editar usuario
   { path: 'ver-usuario', component: VerperfilComponent},//Ver mi perfil
   { path: 'ver-egresos', component: VeregresosComponent},//Ver egresos
   { path: 'registrar-egreso', component: AgregaregresoComponent},//Agregar egreso
-  { path: 'editar-egreso', component: EditarEgresoComponent},//Agregar egreso
+  { path: 'editar-egreso/:id', component: EditarEgresoComponent},//Agregar egreso
   { path: 'agregar-egreso', component: AgregaregresoComponent},//Agregar egreso
   { path: 'ver-unidad', component: VerunidadesdenegocioComponent},//Ver unidad de negocio
-  { path: 'editar-unidad', component: EditarUnidadesdenegocioComponent},//Editar unidad de negocio
+  { path: 'editar-unidad/:id', component: EditarUnidadesdenegocioComponent},//Editar unidad de negocio
   { path: 'agregar-unidad', component: AgregarUnidadesdenegocioComponent},//Agregar unidad de negocio
   { path: 'ver-empresas', component: VerempresasComponent},//Ver empresas
-  { path: 'editar-empresa', component: EditarEmpresaComponent},//Editar empresas
+  { path: 'editar-empresa/:id', component: EditarEmpresaComponent },//Editar empresas
   { path: 'agregar-empresa', component: AgregarEmpresaComponent},//Editar empresas
   { path: 'ver-tipodeegreso', component: VertipodeegresoComponent},//Ver tipo de egreso
   { path: 'agregar-tipo', component: AgregarTipodeegresoComponent},//Agregar tipo de egreso
-  { path: 'editar-tipo', component: EditarTipodeegresoComponent},//Editar tipo de egreso
+  { path: 'editar-tipo/:id', component: EditarTipodeegresoComponent},//Editar tipo de egreso
   { path: 'ver-origen', component: VerOrigenComponent},//Ver origen egreso
   { path: 'agregar-origen', component: AgregarOrigendeegresoComponent},//Agregar origen egreso
-  { path: 'editar-origen', component: EditarOrigendeegresoComponent},//Editar origen egreso
+  { path: 'editar-origen/:id', component: EditarOrigendeegresoComponent},//Editar origen egreso
   { path: 'ver-productosyservicios', component: VerProductosyserviciosComponent},//Ver productos y servicios
-  { path: 'editar-productosyservicios', component: EditarProductosyserviciosComponent},//Editar productos y servicios
+  { path: 'editar-productosyservicios/:id', component: EditarProductosyserviciosComponent},//Editar productos y servicios
   { path: 'agregar-productosyservicios', component: AgregarProductosyserviciosComponent},//Agregar productos y servicios
   { path: 'ver-papelera', component: VerPapeleraComponent},//Ver papelera ingresos
   { path: 'ver-papelera-egresos', component: VerPapeleraegresosComponent},//Ver papelera egresos

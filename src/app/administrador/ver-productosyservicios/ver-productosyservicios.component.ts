@@ -1,12 +1,11 @@
-import { PageOrientation } from './../../../../node_modules/@types/pdfmake/interfaces.d';
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import Swal from 'sweetalert2';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-
-
+(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
 export interface Productos{
   id:number;
@@ -39,9 +38,6 @@ export class VerProductosyserviciosComponent {
   }
   
 
-  editarproducto(): void {
-    this.router.navigate(['/editar-productosyservicios']);
-  }
   agregarproducto(): void {
     this.router.navigate(['/agregar-productosyservicios']);
   }
@@ -91,22 +87,20 @@ export class VerProductosyserviciosComponent {
     });
   }
 
-  generatePDF(productos: any) {
+ 
+  generatePDF(productos: any[]): void {
     try {
       const documentDefinition = {
-        PageOrientation: 'portrait', // Cambiado a orientación vertical
         content: [
           { text: 'Lista de Productos', style: 'header' },
           '\n\n',
           {
             table: {
               headerRows: 1,
-              widths: [20, 50, 50, 40, 50, 30, 30, 30, 30, 40, 40, 20],
+              widths: [100, 400],
               body: [
-                ['#ID', 'Producto'],
-                ...productos.map((p: any) => [
-                  p.id, p.producto
-                ]),
+                ['id', 'producto'],
+                ...productos.map((p: any) => [p.id, p.producto]),
               ],
             },
           },
@@ -119,26 +113,41 @@ export class VerProductosyserviciosComponent {
         },
       };
 
-      // Crear el PDF
-      const pdfDocGenerator = pdfMake.createPdf(documentDefinition);
+    // Obtener la fecha actual y formatearla
+    const currentDate = new Date(); // Fecha y hora local del usuario
+    const utcDate = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate())); // Fecha y hora en UTC
+    const formattedDate = utcDate.toISOString().slice(0, 10); // Convertir a ISO y obtener la fecha en formato YYYY-MM-DD
+    
+    // Nombre del archivo PDF con la fecha actual
+    const fileName = `Lista_de_Productos_${formattedDate}.pdf`;
+    
+    // Crear el PDF
+    const pdfDocGenerator = pdfMake.createPdf(documentDefinition);
+    
 
       Swal.fire({
         icon: 'success',
-        text: 'Solicitud enviada correctamente',
-        showConfirmButton: true
+        text: 'PDF generado correctamente',
+        showConfirmButton: false,
+        timer: 1500
       });
 
       // Descargar el PDF
-      pdfDocGenerator.download('Lista_de_Productos.pdf');
+      pdfDocGenerator.download(fileName);
     } catch (error) {
       console.error('Error al generar el PDF:', error);
       Swal.fire({
         icon: 'error',
-        title: '¡Error!',
-        text: 'Al generar el PDF',
+        title: 'Error',
+        text: 'Error al generar el PDF',
         showConfirmButton: true
       });
     }
+  }
+
+
+  editarproducto(producto: Productos): void {
+    this.router.navigate(['/editar-productosyservicios', producto.id]);
   }
 
 

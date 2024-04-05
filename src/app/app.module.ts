@@ -21,7 +21,6 @@ import { MatTableModule } from '@angular/material/table';
 import { VeregresosComponent } from './administrador/veregresos/veregresos.component';
 import { AgregaregresoComponent } from './administrador/agregaregreso/agregaregreso.component';
 import { VerunidadesdenegocioComponent } from './administrador/verunidadesdenegocio/verunidadesdenegocio.component';
-import { VerempresasComponent } from './administrador/verempresas/verempresas.component';
 import { VertipodeegresoComponent } from './administrador/vertipodeegreso/vertipodeegreso.component';
 import { VerOrigenComponent } from './administrador/ver-origen/ver-origen.component';
 import { VerProductosyserviciosComponent } from './administrador/ver-productosyservicios/ver-productosyservicios.component';
@@ -56,7 +55,7 @@ import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/
 import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import {  MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DatePipe } from '@angular/common'; // Importa DatePipe
 import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos/ver-papeleraegresos.component';
@@ -78,7 +77,6 @@ import { AdminModule } from './administrador/admin.module';
     VeregresosComponent,
     AgregaregresoComponent,
     VerunidadesdenegocioComponent,
-    VerempresasComponent,
     VertipodeegresoComponent,
     VerOrigenComponent,
     VerProductosyserviciosComponent,
@@ -131,7 +129,7 @@ import { AdminModule } from './administrador/admin.module';
     FormsModule
   ],
   providers: [
-    DatePipe 
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

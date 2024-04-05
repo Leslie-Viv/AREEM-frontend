@@ -64,7 +64,7 @@
               <td>{{ egresop.fechareal }}</td>
               <td>{{ egresop.montototal }}</td>
               <td>{{ egresop.user_id}}</td>
-              <td><button class="btn btn-second">Recuperar</button></td>
+              <td><button (click)="recuperarEgreso(egresop.id)" class="btn btn-second">Recuperar</button></td>
             </tr>
           </tbody>
         </table>

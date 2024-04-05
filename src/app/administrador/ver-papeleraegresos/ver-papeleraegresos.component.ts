@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import Swal from 'sweetalert2';
 
 export interface PapeleraEgreso{
   id: number;
@@ -48,6 +49,53 @@ export class VerPapeleraegresosComponent {
       console.log(data);
       this.listPapeleraE=data;
     })
+  }
+
+  recuperarEgreso(id: number): void {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success mx-1',
+        cancelButton: 'btn btn-danger mx-1'
+      },
+      buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons.fire({
+      title: '¿Deseas recuperar el egreso?',
+      text: '',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, recuperar',
+      cancelButtonText: 'No, cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.papelera.recuperarEgreso(id).subscribe(
+          () => {
+            swalWithBootstrapButtons.fire(
+              '¡Recuperado!',
+              'El egreso ha sido recuperado',
+              'success'
+            );
+            this.loadPapeleraE(); // Puedes realizar acciones adicionales aquí después de archivar el ingreso
+          },
+          (error) => {
+            console.error('Error al recuperar el egreso:', error);
+            swalWithBootstrapButtons.fire(
+              'Error',
+              'Error al recuperar el egreso',
+              'error'
+            );
+          }
+        );
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'Egreso no recuperado',
+          'error'
+        );
+      }
+    });
   }
 
 

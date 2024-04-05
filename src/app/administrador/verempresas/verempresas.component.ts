@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { Router} from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { EditarEmpresaComponent } from '../editar-empresa/editar-empresa.component';
+import Swal from 'sweetalert2';
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
+
+
+
 
 
 export interface Empresa{
@@ -17,13 +24,17 @@ export interface Empresa{
 })
 export class VerempresasComponent implements OnInit{
 
+
   listEmpresas:any=[];
 
   constructor(private router: Router, private admin:AdminService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadEmpresas();
+    
   }
+  
+  
 
   loadEmpresas(){
     return this.admin.getVerempresas().subscribe((data:{})=>{
@@ -35,41 +46,79 @@ export class VerempresasComponent implements OnInit{
   paginap(): void {
     this.router.navigate(['/inicio-admin']);
   }
-  // dataSource: Empresas[] = [
-  //   { Id:1, Nombre_empresa:'bodega'},
-  // ];
-
-  // displayedColumns: string[] = ['Id','Nombre_empresa'];
-
+ 
   agregarempresa(): void {
     this.router.navigate(['/agregar-empresa']);
   }
+
+  editarempresa(empresa: Empresa): void {
+    this.router.navigate(['/editar-empresa', empresa.id]);
+  }
   
 
-// editarempresa(empresa: Empresa) {
-//   console.log('Empresa a editar:', empresa);
-//   // Abre el componente de edición en un cuadro de diálogo modal
-//   const dialogRef = this.dialog.open(EditarEmpresaComponent, {
-//     data: { empresa } // Pasa el objeto de la empresa al componente de edición
-//   });
+  
+  
+  generatePDF(empresas: any[]): void {
+    try {
+      const documentDefinition = {
+        content: [
+          { text: 'Lista de Empresas', style: 'header' },
+          '\n\n',
+          {
+            table: {
+              headerRows: 1,
+              widths: [100, 400],
+              body: [
+                ['id', 'nombreempresa'],
+                ...empresas.map((e: any) => [e.id, e.nombreempresa]),
+              ],
+            },
+          },
+        ],
+        styles: {
+          header: {
+            fontSize: 12,
+            bold: true,
+          },
+        },
+      };
 
-//      // Suscríbete a cualquier acción realizada en el componente de edición
-//      dialogRef.afterClosed().subscribe(
-//       result => {
-//         console.log('Resultado después de cerrar:', result);
-//         this.loadEmpresas();
-//       },
-//       error => {
-//         console.error('Error al cerrar el diálogo:', error);
-//       }
-//     );
-//   }
+      // Obtener la fecha actual y formatearla
+      const currentDate = new Date(); // Fecha y hora local del usuario
+      const utcDate = new Date(Date.UTC(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate())); // Fecha y hora en UTC
+      const formattedDate = utcDate.toISOString().slice(0, 10); // Convertir a ISO y obtener la fecha en formato YYYY-MM-DD
+      
+      // Nombre del archivo PDF con la fecha actual
+      const fileName = `Lista_de_Empresas_${formattedDate}.pdf`;
+      
+      // Crear el PDF
+      const pdfDocGenerator = pdfMake.createPdf(documentDefinition);
+      
 
-editarempresa(empresa: Empresa) {
-  console.log('Empresa a editar:', empresa);
-  // Navega a la ruta del componente de edición y pasa el objeto de la empresa como parámetro
-  this.router.navigate(['editar-empresa'], { state: { empresa: empresa } });
-}
+      Swal.fire({
+        icon: 'success',
+        text: 'PDF generado correctamente',
+        showConfirmButton: false,
+        timer: 1500
+      });
+
+      // Descargar el PDF
+      pdfDocGenerator.download(fileName);
+    } catch (error) {
+      console.error('Error al generar el PDF:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Error al generar el PDF',
+        showConfirmButton: true
+      });
+    }
+  }
+
+
+
+
+
 
 
 }

@@ -177,6 +177,11 @@ export class AdminService {
     const url = `${this.url}/recuperaringreso/${id}`;
     return this.http.post<any>(url, {});
   }
+  recuperarEgreso(id: number): Observable<any> {
+    const url = `${this.url}/recuperaregreso/${id}`;
+    return this.http.post<any>(url, {});
+  }
+
 
   getVeringresos() {
     return this.http.get(this.api + '/api/veringreso', {
@@ -204,9 +209,24 @@ export class AdminService {
   obtenerEmpresaPorId(id: number): Observable<any>{
     return this.http.get<any>(`${this.url}/obtenerempresa/${id}`);
   }
+  obtenerProductoPorId(id: number): Observable<any>{
+    return this.http.get<any>(`${this.url}/obtenerproducto/${id}`);
+  }
+  obtenerUnidadPorId(id: number): Observable<any>{
+    return this.http.get<any>(`${this.url}/obtenerunidad/${id}`);
+  }
+
 
   actualizarempresa(id: number, datosActualizados: any): Observable<any> {
     return this.http.patch<any>(`${this.url}/actualizarempresa/${id}`, datosActualizados);
+  }
+
+  actualizarproducto(id: number, datosActualizadosProducto: any): Observable<any> {
+    return this.http.patch<any>(`${this.url}/actualizarproducto/${id}`, datosActualizadosProducto);
+  }
+
+  actualizarunidad(id: number, datosActualizados: any): Observable<any> {
+    return this.http.patch<any>(`${this.url}/actualizarunidad/${id}`, datosActualizados);
   }
 
   

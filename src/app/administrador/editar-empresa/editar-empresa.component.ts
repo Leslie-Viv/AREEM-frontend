@@ -1,8 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 
 
@@ -17,19 +16,18 @@ interface Empresa {
   styleUrls: ['./editar-empresa.component.css']
 })
 export class EditarEmpresaComponent {
-  @Input() empresa!: Empresa; // Asegúrate de utilizar el tipo correcto (Agremiado) en lugar de any
-  empresaForm!: FormGroup;
+  empresaForm: FormGroup;
 
+  constructor(    private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder,
+    private adminService: AdminService
 
-  constructor(private router: Router,private fb: FormBuilder, private empresaS: AdminService, @Inject(MAT_DIALOG_DATA) public data: any, private dialogRef: MatDialogRef<EditarEmpresaComponent>  // Agrega esta línea) { }
-  ){
-    if (data && data.empresa) {
-      this.empresaForm = this.fb.group({
-        nombreempresa: [data.empresa.nombreempresa, Validators.required]
-      });
-    } else {
-      console.error('No se proporcionó una empresa válida para editar.');
-    }
+  ) {
+
+    this.empresaForm = this.fb.group({
+      nombreempresa: ['', Validators.required]
+    });
   }
   
   regresar(): void {
@@ -37,55 +35,42 @@ export class EditarEmpresaComponent {
   }
 
   ngOnInit(): void {
-    console.log('Empresa recibido en ngOnInit:', this.data.empresa);
-
-    // Verifica si agremiado y agremiado.id están definidos antes de realizar la lógica
-    if (this.data.empresa && this.data.empresa.id) {
-      this.empresaS.obtenerEmpresaPorId(this.data.empresa.id).subscribe(
-        (data) => { 
-          console.log("Datos de la Empresa:", this.data.empresa.id);
-          if (this.data.empresa.id) {
-            this.empresaForm.patchValue(this.data.empresa.id);
-          } else {
-            console.error('Datos de la empresa no válidos.');
-          }
-        },
-        (error) => {
-          console.error("Error al obtener datos de la empresa:", error);
-        }
-      );
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      this.adminService.obtenerEmpresaPorId(id).subscribe((empresa) => {
+        this.empresaForm.patchValue({
+          nombreempresa: empresa.nombreempresa
+        });
+      });
     } else {
-      console.error('No se proporcionó una empresa válida para editar.');
+      console.error('ID de empresa no proporcionado');
+      // Puedes redirigir a una página de error o hacer cualquier otra acción apropiada aquí
     }
   }
 
-
-  actualizarEmpresa() {
-    const datosActualizados = this.empresaForm.value;
-    this.empresaS.actualizarempresa(this.data.empresa.id, datosActualizados).subscribe(
-      response => {
-        console.log('Empresa actualizada correctamente', response);
+  actualizarEmpresa(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id) {
+      const datosActualizados = this.empresaForm.value;
+      this.adminService.actualizarempresa(id, datosActualizados).subscribe(() => {
+        console.log('Empresa actualizada correctamente');
         Swal.fire({
           icon: 'success',
-          text: 'Empresa actualizada correctamente',
-          showConfirmButton: true
+          title: 'Empresa actualizada',
+          text: 'La empresa se ha actualizado correctamente.',
+          showConfirmButton: false,
+          timer: 1500 // Cierra automáticamente después de 1.5 segundos
         });
-        this.dialogRef.close(); // Cerrar el formulario aquí
-      },
-      error => {
+        // Puedes mostrar un mensaje de éxito o redirigir a otra página después de actualizar la empresa
+      }, (error) => {
         console.error('Error al actualizar empresa', error);
-        Swal.fire({
-          icon: 'error',
-          title: '¡Error!',
-          text: 'Al actualizar empresa',
-          showConfirmButton: true
-        });
-      }
-    );
+        // Puedes mostrar un mensaje de error al usuario o hacer cualquier otra acción apropiada aquí
+      });
+    } else {
+      console.error('ID de empresa no proporcionado');
+      // Puedes redirigir a una página de error o hacer cualquier otra acción apropiada aquí
+    }
   }
 
 }
-
-  
-
 

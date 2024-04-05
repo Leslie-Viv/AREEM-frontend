@@ -1,18 +1,17 @@
-
+<form [formGroup]="productoForm" (ngSubmit)="actualizarProducto()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Editar Producto/Servicio</div>
     </div>
     <div class="card-body">
-      <form action="#">
-        <div class="form-group">
-          <label for="username">Descripcion de producto o servicio:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
-        </div>
+      <div class="form-group">
+        <label for="producto">Producto:</label>
+        <input type="text" id="producto" formControlName="producto" class="form-control">
+      </div>
        <input type="submit" class="btn" value="editar">  
-     </form>
     </div>
   </div>
+</form>
   
 
 
