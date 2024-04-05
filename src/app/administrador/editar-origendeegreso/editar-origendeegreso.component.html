@@ -10,7 +10,18 @@
       </div>
       <div class="form-group">
         <label for="tipodecuenta">Tipo de cuenta:</label>
-        <input type="text" id="tipodecuenta" formControlName="tipodecuenta" class="form-control">
+        <div class="input-group">
+          <select class="form-control" formControlName="tipodecuenta">
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Opciones</option>
+            <option value="mayor">Mayor</option>
+            <option value="menor">Menor</option>
+          </select>
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </span>
+          </div>
+        </div>
       </div>
        <input type="submit" class="btn" value="editar">  
     </div>

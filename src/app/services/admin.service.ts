@@ -121,6 +121,8 @@ export class AdminService {
       withCredentials: true
     });
   }
+ 
+  
 
   getVerTipos() {
     return this.http.get(this.api + '/api/vertipo', {
@@ -162,6 +164,16 @@ export class AdminService {
       withCredentials: true
     });
   }
+  private apiUrl7 = `${this.api}/nuevousuario`;
+  agregarUsuario(usuarioData: Usuarios): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post<any>(this.apiUrl7, usuarioData, { headers });
+  }
+
+
 
   archivarIngreso(id: number): Observable<any> {
     const url = `${this.url}/archivaringreso/${id}`;
@@ -222,6 +234,13 @@ export class AdminService {
     return this.http.get<any>(`${this.url}/obtenerorigen/${id}`);
   }
 
+  obtenerIngresoPorId(id: number): Observable<any>{
+    return this.http.get<any>(`${this.url}/obteneringreso/${id}`);
+  }
+  obtenerEgresoPorId(id: number): Observable<any>{
+    return this.http.get<any>(`${this.url}/obteneregreso/${id}`);
+  }
+
 
   actualizarempresa(id: number, datosActualizados: any): Observable<any> {
     return this.http.patch<any>(`${this.url}/actualizarempresa/${id}`, datosActualizados);
@@ -240,6 +259,14 @@ export class AdminService {
   }
   actualizarorigen(id: number, datosActualizados: any): Observable<any> {
     return this.http.patch<any>(`${this.url}/actualizarorigen/${id}`, datosActualizados);
+  }
+
+  actualizaringreso(id: number, datosActualizados: any): Observable<any> {
+    return this.http.patch<any>(`${this.url}/actualizaringreso/${id}`, datosActualizados);
+  }
+
+  actualizaregreso(id: number, datosActualizados: any): Observable<any> {
+    return this.http.patch<any>(`${this.url}/actualizaregreso/${id}`, datosActualizados);
   }
 
   
@@ -321,4 +348,5 @@ agregarEgreso(egresoData: any): Observable<any> {
 
   return this.http.post<any>(this.apiUrl6, egresoData, { headers });
 }
+
 }

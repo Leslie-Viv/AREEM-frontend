@@ -1,57 +1,162 @@
+<form [formGroup]="egresoForm" (ngSubmit)="actualizarEgreso()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Editar un egreso</div>
     </div>
     <div class="card-body">
-      <form action="#">
+      <div class="form-group">
+        <label for="nombrecompleto">Nombre Completo:</label>
+        <div class="input-group">
+          <select class="form-control" formControlName="nombrecompleto">
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Selecciona un usuario</option>
+            <option *ngFor="let usuario of usuarios" [value]="usuario.nombrecompleto">{{ usuario.nombrecompleto }}</option>
+          </select>                    
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </span>
+          </div>
+        </div>
+        <div *ngIf="egresoForm.get('nombrecompleto')?.invalid && egresoForm.get('nombrecompleto')?.touched"
+          class="error-message form-text text-danger">El nombre completo es requerido </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nombreempresa">Nombre Empresa:</label>
+        <div class="input-group">
+          <select class="form-control" formControlName="nombreempresa">
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Selecciona una empresa</option>
+            <option *ngFor="let empresa of empresas" [value]="empresa">{{ empresa }}</option>
+          </select>            
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </span>
+          </div>
+        </div>
+        <div *ngIf="egresoForm.get('nombreempresa')?.invalid && egresoForm.get('nombreempresa')?.touched"
+        class="error-message form-text text-danger">La unidad de negocio es requerida </div>
+      </div>  
+
+      <div class="form-group">
+        <label for="anomesdereporte">Año mes de reporte:</label>
+        <input type="month" class="form-control" id="anomesdereporte" formControlName="anomesdereporte" placeholder="Escribe año y mes de reporte">
+        <div *ngIf="egresoForm.get('anomesdereporte')?.invalid && egresoForm.get('anomesdereporte')?.touched"
+        class="error-message form-text text-danger">El año y mes de reporte es requerido </div>
+      </div>
+
+      <div [formGroup]="egresoForm" class="form-group">
+        <label for="selectDataType" class="form-label">Selecciona los datos del origen de egreso:</label>
+        <select id="selectDataType" formControlName="selectedDataType" class="form-select" (change)="onDataSelectedType()">
+          <option *ngFor="let data of datosTabla2" [ngValue]="data">{{ data.id }}</option>
+        </select>
+      </div>
+      
+      <div *ngIf="selectedDataType" class="selected-data-container">
         <div class="form-group">
-          <label for="username">Nombre de empresa:</label>
-          <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
+          <label for="inputorigenegreso">Origen de egreso:</label>
+          <input type="text" [readonly]="isReadOnly('origenegreso')" id="inputorigenegreso" formControlName="origenegreso" class="form-control">
         </div>
         <div class="form-group">
-          <label for="email">Fecha real:</label>
-          <input required="" class="form-control" name="nombreingreso" id="nombreingreso" type="text">
+          <label for="inputtipodecuenta">Tipo de cuenta:</label>
+          <input type="text" id="inputtipodecuenta" [readonly]="isReadOnly('tipodecuenta')" formControlName="tipodecuenta" class="form-control">
+        </div>
+      </div>
+      
+
+      <div [formGroup]="egresoForm" class="form-group">
+        <label for="selectData" class="form-label">Selecciona los datos del tipo de egreso:</label>
+        <select id="selectData" formControlName="selectedData" class="form-select" (change)="onDataSelected()">
+          <option *ngFor="let data of datosTabla" [ngValue]="data">{{ data.id }}</option>
+        </select>
+      </div>
+      
+      <div *ngIf="selectedData" class="selected-data-container">
+        <div class="form-group">
+          <label for="inputN1">N1:</label>
+          <input type="text" id="inputN1" [readonly]="isReadOnly('N1')" formControlName="N1" class="form-control">
         </div>
         <div class="form-group">
-            <label for="password">Fecha sistema:</label>
-            <input required="" class="form-control" name="Ano_mes_de_reporte" id="Ano_mes_de_reporte" type="text">
-          </div>
-        <div class="form-group">
-          <label for="password">Año mes de reporte:</label>
-          <input required="" class="form-control" name="Ano_mes_de_reporte" id="Ano_mes_de_reporte" type="text">
+          <label for="inputN2">N2:</label>
+          <input type="text" id="inputN2" [readonly]="isReadOnly('N2')" formControlName="N2" class="form-control">
         </div>
         <div class="form-group">
-          <label for="confirm-password">Cuenta Origen Egresos:</label>
-          <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
+          <label for="inputN3">N3:</label>
+          <input type="text" id="inputN3" [readonly]="isReadOnly('N3')" formControlName="N3" class="form-control">
         </div>
         <div class="form-group">
-            <label for="confirm-password">Tipo de cuenta:</label>
-            <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
+          <label for="inputN4">N4:</label>
+          <input type="text" id="inputN4" [readonly]="isReadOnly('N4')" formControlName="N4" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="inputN5">N5:</label>
+          <input type="text" id="inputN5" [readonly]="isReadOnly('N5')" formControlName="N5" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="inputdescripcionegreso">Descripción de egreso:</label>
+          <input type="text" [readonly]="isReadOnly('descripcionegreso')" id="inputdescripcionegreso" formControlName="descripcionegreso" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="inputgasto">Gasto:</label>
+          <input type="text" id="inputgasto" [readonly]="isReadOnly('gasto')" formControlName="gasto" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nombreunidad">Nombre Unidad de Negocio:</label>
+        <div class="input-group">
+          <select class="form-control" formControlName="nombreunidad">
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Selecciona una unidad</option>
+            <option *ngFor="let unidad of unidades" [value]="unidad">{{ unidad }}</option>
+          </select>            
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </span>
           </div>
-          <div class="form-group">
-            <label for="confirm-password">Tipo de egreso:</label>
-            <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
+        </div>
+        <div *ngIf="egresoForm.get('nombreunidad')?.invalid && egresoForm.get('nombreunidad')?.touched"
+        class="error-message form-text text-danger">La unidad de negocio es requerida </div>
+      </div>  
+      
+      
+      <div class="form-group">
+        <label for="fechareal">Fecha Real:</label>
+        <input type="date" class="form-control" id="fechareal" formControlName="fechareal" placeholder="Escribe la fecha real">
+        <div *ngIf="egresoForm.get('fechareal')?.invalid && egresoForm.get('fechareal')?.touched"
+        class="error-message form-text text-danger">La fecha real es requerida </div>
+      </div>
+
+      <div class="form-group">
+        <label for="montototal">Monto total:</label>
+        <input type="text" class="form-control" id="montototal" formControlName="montototal" placeholder="Escribe el monto total">
+        <div *ngIf="egresoForm.get('montototal')?.invalid && egresoForm.get('montototal')?.touched"
+      class="error-message form-text text-danger">El monto total es requerido </div>
+      </div>
+
+      <div class="form-group">
+        <label for="user_id">Clave de Usuario:</label>
+        <div class="input-group">
+          <select class="form-control" formControlName="user_id">
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Opciones</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </span>
           </div>
-          <div class="form-group">
-            <label for="confirm-password">Descripcion egreso:</label>
-            <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Es gasto:</label>
-            <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Unidad de negocio:</label>
-            <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Monto total:</label>
-            <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
-          </div>
-       <input type="submit" class="btn" value="Editar"> </form>
+        </div>
+        <div *ngIf="egresoForm.get('user_id')?.invalid && egresoForm.get('user_id')?.touched"
+      class="error-message form-text text-danger">La clave de usuario es requerida </div>
+      </div>
+
+       <input type="submit" class="btn" value="Editar"> 
     </div>
   </div>
-  
+  </form>
 
 
 

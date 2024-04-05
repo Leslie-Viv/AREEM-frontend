@@ -1,32 +1,57 @@
-
+<form [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
 <div class="card formulario">
     <div class="card-header">
       <div class="text-header">Agregar nuevo usuario</div>
     </div>
     <div class="card-body">
-      <form action="#">
+      <div class="form-group">
+        <label for="nombreempresa">Nombre Empresa:</label>
+        <div class="input-group">
+          <select class="form-control" formControlName="nombreempresa">
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Selecciona una empresa</option>
+            <option *ngFor="let empresa of empresas" [value]="empresa">{{ empresa }}</option>
+          </select>
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <mat-icon>arrow_drop_down</mat-icon>
+            </span>
+          </div>
+        </div>
+        <div *ngIf="usuarioForm.get('nombreempresa')?.invalid && usuarioForm.get('nombreempresa')?.touched"
+        class="error-message form-text text-danger">El nombre de empresa es requerido </div>
+      </div>     
         <div class="form-group">
-          <label for="username">Nombre Empresa:</label>
+          <label for="nombrecompleto">Nombre Completo:</label>
           <input required="" class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
         </div>
         <div class="form-group">
-          <label for="email">Nombre Completo:</label>
-          <input required="" class="form-control" name="nombreingreso" id="nombreingreso" type="text">
-        </div>
-        <div class="form-group">
-          <label for="password">Email:</label>
-          <input required="" class="form-control" name="Ano_mes_de_reporte" id="Ano_mes_de_reporte" type="text">
+          <label for="email">Email:</label>
+          <input required="" class="form-control" name="email" id="email" type="text">
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input required="" class="form-control" name="Ano_mes_de_reporte" id="Ano_mes_de_reporte" type="text">
+            <input required="" class="form-control" name="password" id="password" type="text">
           </div>
           <div class="form-group">
-            <label for="password">Id de rol:</label>
-            <input required="" class="form-control" name="Ano_mes_de_reporte" id="Ano_mes_de_reporte" type="text">
+            <label for="rol_id">Id rol::</label>
+            <div class="input-group">
+              <select class="form-control" formControlName="rol_id">
+                <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Opciones</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <mat-icon>arrow_drop_down</mat-icon>
+                </span>
+              </div>
+            </div>
+            <div *ngIf="usuarioForm.get('rol_id')?.invalid && usuarioForm.get('rol_id')?.touched"
+          class="error-message form-text text-danger">La clave de usuario es requerida </div>
           </div>
+          
        <input type="submit" class="btn" value="agregar">  
-     </form>
     </div>
   </div>
   
@@ -46,4 +71,5 @@
       </div>
     </div>
   </div> 
+</form>
 

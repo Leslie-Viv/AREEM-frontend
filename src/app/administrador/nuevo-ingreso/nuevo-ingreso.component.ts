@@ -27,7 +27,7 @@ export class NuevoIngresoComponent {
       anomesdereporte: ['', [Validators.required]],
       producto: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
       fechareal: ['', [Validators.required]],
-      created_at: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(60)]],
+      created_at: ['', [Validators.required]],
       montototal: ['', [Validators.required]],
       user_id: ['', [Validators.required]]
     });
