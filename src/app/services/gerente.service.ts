@@ -46,7 +46,7 @@ export class GerenteService {
 
 
   getUserInfo() {
-    return this.http.get(this.api + '/api/profilefinanzas', {
+    return this.http.get(this.api + '/api/profilegerente', {
       withCredentials: true
     });
   }
@@ -62,4 +62,26 @@ export class GerenteService {
       })
     );
   }
+
+  getVerIngresos() {
+    return this.http.get(this.api + '/api/veringreso', {
+      withCredentials: true
+    });
+  }
+  getVerEgresos() {
+    return this.http.get(this.api + '/api/veregreso', {
+      withCredentials: true
+    });
+  }
+
+  private apiUrl6 = 'http://localhost:8000/api/nuevoegreso';
+
+
+agregarEgreso(egresoData: any): Observable<any> {
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+
+  return this.http.post<any>(this.apiUrl6, egresoData, { headers });
+}
 }

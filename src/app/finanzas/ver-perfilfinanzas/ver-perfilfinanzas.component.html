@@ -1,38 +1,35 @@
 <div class="card formulario">
-    <div class="card-header">
-      <div class="text-header">Datos de mi perfil</div>
-    </div>
-    <div class="card-body">
-      <form action="#">
-        <div class="form-group">
-          <label for="username">Nombre Empresa:</label>
-          <input  class="form-control" name="nombrecompleto" id="nombrecompleto" type="text">
-        </div>
-        <div class="form-group">
-          <label for="email">Nombre Completo:</label>
-          <input class="form-control" name="nombreingreso" id="nombreingreso" type="text">
-        </div>
-        <div class="form-group">
-          <label for="password">Email:</label>
-          <input  class="form-control" name="Ano_mes_de_reporte" id="Ano_mes_de_reporte" type="text">
-        </div>
-     </form>
-    </div>
+  <div class="card-header">
+    <div class="text-header">Datos de mi perfil</div>
   </div>
-  
-
-
+  <div class="card-body">
+    <form action="#">
+      <div class="form-group">
+        <label for="nombreempresa">Nombre Empresa:</label>
+        <input class="form-control" name="nombreempresa" id="nombreempresa" type="text" [(ngModel)]="userInfo.nombreempresa" disabled>
+      </div>
+      <div class="form-group">
+        <label for="nombrecompleto">Nombre Completo:</label>
+        <input class="form-control" name="nombrecompleto" id="nombrecompleto" type="text" [(ngModel)]="userInfo.nombrecompleto" disabled>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input class="form-control" name="email" id="email" type="email" [(ngModel)]="userInfo.email" disabled>
+      </div>
+    </form>
+  </div>
+</div>
 
 <div class="contenedor-con-fondo">
-    <div class="row align-items-center">
+  <div class="row align-items-center">
       <div class="col-md-6">
-        <span class="icon-and-text">
-          <i class="material-icons">person</i>
-          <span class="text-home">Ver mi perfil</span>
-        </span>
-        <button (click)="paginap()" class="positionback"><mat-icon>arrow_back</mat-icon>Regresar</button>
-       
-      
+          <span class="icon-and-text">
+              <i class="material-icons">person</i>
+              <span class="text-home">Ver mi perfil</span>
+          </span>
+          <button (click)="paginap()" class="positionback"><mat-icon>arrow_back</mat-icon>Regresar</button>
       </div>
-    </div>
-  </div> 
+  </div>
+</div> 
+
+  

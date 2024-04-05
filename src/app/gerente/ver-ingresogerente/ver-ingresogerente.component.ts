@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GerenteService } from 'src/app/services/gerente.service';
 
 export interface Ingreso{
-  Id: number;
-  Usuario: string;
-  Unidad_de_Negocio: string;
-  Ano_mes_de_reporte: number;
-  Fecha_Real: number;
-  Fecha_Sistema: number;
-  Monto_Total: number
-
-  
+  id:number;
+  nombrecompleto:string;
+  nombreunidad:string;
+  anomesdereporte:string;
+  producto:string;
+  fechareal:string;
+  created_at:string;
+  montototal:string;
+  user_id:string;
 }
 
 @Component({
@@ -19,16 +20,23 @@ export interface Ingreso{
   styleUrls: ['./ver-ingresogerente.component.css']
 })
 export class VerIngresogerenteComponent {
-  constructor(private router: Router) { }
+  listIngresosGerente:any=[];
+  constructor(private router: Router, private ingresos:GerenteService) { }
 
   paginap(): void {
     this.router.navigate(['/home-gerente']);
   }
-  dataSource: Ingreso[] = [
-    { Id:1, Usuario: 'Juan', Unidad_de_Negocio: 'Pérez', Ano_mes_de_reporte: 30,Fecha_Real: 23,Fecha_Sistema: 56 ,Monto_Total: 1300 },
-  ];
+  ngOnInit(): void {
+    this.loadIngresos();
+  }
 
-  displayedColumns: string[] = ['Id','Usuario', 'Unidad_de_Negocio','Ano_mes_de_reporte','Fecha_Real','Fecha_Sistema','Monto_Total'];
+  loadIngresos(){
+    return this.ingresos.getVerIngresos().subscribe((data:{})=>{
+      console.log(data);
+      this.listIngresosGerente=data;
+    })
+  }
+
 
   Ingreso(): void {
     this.router.navigate(['/nuevo-ingresogerente']);

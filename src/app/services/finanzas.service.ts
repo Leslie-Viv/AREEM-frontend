@@ -43,7 +43,7 @@ export class FinanzasService {
 
 
   getUserInfo() {
-    return this.http.get(this.api + '/api/profilegerent', {
+    return this.http.get(this.api + '/api/profilefinanzas', {
       withCredentials: true
     });
   }
