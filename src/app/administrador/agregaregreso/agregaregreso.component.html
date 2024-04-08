@@ -48,7 +48,7 @@
       <div [formGroup]="egresoForm" class="form-group">
         <label for="selectDataType" class="form-label">Selecciona los datos del origen de egreso:</label>
         <select id="selectDataType" formControlName="selectedDataType" class="form-select" (change)="onDataSelectedType()">
-          <option *ngFor="let data of datosTabla2" [ngValue]="data">{{ data.id }}</option>
+          <option *ngFor="let data of datosTabla2" [ngValue]="data">{{ data.origenegreso }}</option>
         </select>
       </div>
       
@@ -67,7 +67,7 @@
       <div [formGroup]="egresoForm" class="form-group">
         <label for="selectData" class="form-label">Selecciona los datos del tipo de egreso:</label>
         <select id="selectData" formControlName="selectedData" class="form-select" (change)="onDataSelected()">
-          <option *ngFor="let data of datosTabla" [ngValue]="data">{{ data.id }}</option>
+          <option *ngFor="let data of datosTabla" [ngValue]="data">{{ data.descripcionegreso }}</option>
         </select>
       </div>
       
@@ -138,10 +138,8 @@
         <label for="user_id">Clave de Usuario:</label>
         <div class="input-group">
           <select class="form-control" formControlName="user_id">
-            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Opciones</option>
+            <option value="" disabled selected style="font-size: 12px; font-weight: lighter;">Selecciona clave de usuario</option>
             <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
           </select>
           <div class="input-group-append">
             <span class="input-group-text">

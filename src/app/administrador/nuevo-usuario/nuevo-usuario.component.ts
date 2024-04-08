@@ -19,7 +19,7 @@ export class NuevoUsuarioComponent {
       this.usuarioForm = this.fb.group({
         nombreempresa: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]],
         nombrecompleto: ['', Validators.required],
-        email: ['', Validators.required],
+        email: ['', Validators.required,Validators.email],
         password: ['', Validators.required],
         rol_id: ['', Validators.required],
       });
