@@ -75,7 +75,7 @@
   .imagen-usuario{
     position: absolute;
     top: 70%;
-    left: 65%;
+    left: 45%;
     width: 9.5%; /* Ajusta el ancho de la imagen según sea necesario */
     height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
   }
@@ -92,7 +92,7 @@
     position: absolute;
     color:rgb(83, 77, 77);
     top: 65%;
-    left: 55%;
+    left: 35%;
     font-family: Arial, sans-serif; /* Tipo de letra Arial */
     font-size: 20px; /* Ajusta el tamaño del texto según tus necesidades */
     font-weight: 1000;
@@ -148,7 +148,7 @@
 .boton-add{
   position: absolute;
   top: 92%;
-  left: 66%;
+  left: 46%;
 }
 .imagen-centrada{
   position: absolute;

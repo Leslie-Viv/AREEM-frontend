@@ -8,7 +8,7 @@
           <label for="nombrecompleto">Nombre completo:</label>
           <input type="text" class="form-control" id="nombrecompleto" formControlName="nombrecompleto" placeholder="Escribe tu nombre completo">
           <div *ngIf="egresoForm.get('nombrecompleto')?.invalid && egresoForm.get('nombrecompleto')?.touched"
-        class="error-message form-text text-danger">El monto total es requerido </div>
+        class="error-message form-text text-danger">El nombre completo es requerido </div>
         </div>
   
         <div class="form-group">
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div *ngIf="egresoForm.get('nombreempresa')?.invalid && egresoForm.get('nombreempresa')?.touched"
-          class="error-message form-text text-danger">La unidad de negocio es requerida </div>
+          class="error-message form-text text-danger">La empresa es requerida </div>
         </div>  
   
         <div class="form-group">
@@ -38,7 +38,7 @@
         <div [formGroup]="egresoForm" class="form-group">
           <label for="selectDataType" class="form-label">Selecciona los datos del origen de egreso:</label>
           <select id="selectDataType" formControlName="selectedDataType" class="form-select" (change)="onDataSelectedType()">
-            <option *ngFor="let data of datosTabla2" [ngValue]="data">{{ data.id }}</option>
+            <option *ngFor="let data of datosTabla2" [ngValue]="data">{{ data.origenegreso }}</option>
           </select>
         </div>
         
@@ -57,7 +57,7 @@
         <div [formGroup]="egresoForm" class="form-group">
           <label for="selectData" class="form-label">Selecciona los datos del tipo de egreso:</label>
           <select id="selectData" formControlName="selectedData" class="form-select" (change)="onDataSelected()">
-            <option *ngFor="let data of datosTabla" [ngValue]="data">{{ data.id }}</option>
+            <option *ngFor="let data of datosTabla" [ngValue]="data">{{ data.descripcionegreso }}</option>
           </select>
         </div>
         

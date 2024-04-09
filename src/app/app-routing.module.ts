@@ -29,63 +29,57 @@ import { EditarOrigendeegresoComponent } from './administrador/editar-origendeeg
 import { EditarProductosyserviciosComponent } from './administrador/editar-productosyservicios/editar-productosyservicios.component';
 import { AgregarProductosyserviciosComponent } from './administrador/agregar-productosyservicios/agregar-productosyservicios.component';
 import { HomegerenteComponent } from './gerente/homegerente/homegerente.component';
-import { VerIngresogerenteComponent } from './gerente/ver-ingresogerente/ver-ingresogerente.component';
 import { VerEgresogerenteComponent } from './gerente/ver-egresogerente/ver-egresogerente.component';
-import { NuevoIngresogerenteComponent } from './gerente/nuevo-ingresogerente/nuevo-ingresogerente.component';
 import { NuevoEgresogerenteComponent } from './gerente/nuevo-egresogerente/nuevo-egresogerente.component';
 import { VerPerfilgerenteComponent } from './gerente/ver-perfilgerente/ver-perfilgerente.component';
 import { HomeFinanzasComponent } from './finanzas/home-finanzas/home-finanzas.component';
-import { VerIngresofinanzasComponent } from './finanzas/ver-ingresofinanzas/ver-ingresofinanzas.component';
-import { NuevoIngresofinanzasComponent } from './finanzas/nuevo-ingresofinanzas/nuevo-ingresofinanzas.component';
 import { VerEgresosfinanzasComponent } from './finanzas/ver-egresosfinanzas/ver-egresosfinanzas.component';
 import { NuevoEgresofinanzasComponent } from './finanzas/nuevo-egresofinanzas/nuevo-egresofinanzas.component';
 import { VerPerfilfinanzasComponent } from './finanzas/ver-perfilfinanzas/ver-perfilfinanzas.component';
 import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos/ver-papeleraegresos.component';
+import { AdminGuard } from './guards/admin.guard';
+
 
 const routes: Routes = [
   // Otras rutas existentes
-  { path: 'inicio-admin', component: PaginaprincipalComponent }, // Pagina principal admin
+  { path: 'inicio-admin', component: PaginaprincipalComponent, canActivate: [AdminGuard] }, // Pagina principal admin
   { path: 'login', component: LoginComponent }, // Ruta para el componente de inicio de sesión
   { path: '', redirectTo: '/login', pathMatch: 'full', }, // Ruta raíz redirige al componente de inicio de sesión
-  { path: 'ingresos-admin', component: IngresosComponent }, // Ver ingresos
-  { path: 'editar-ingreso/:id', component: EditarIngresoComponent }, // Registrar nuevo ingreso
-  { path: 'nuevo-ingreso', component: NuevoIngresoComponent }, // Registrar nuevo ingreso
-  { path: 'nuevos-usuarios', component: NuevosusuariosComponent }, // Verusuarios
-  { path: 'nuevo-usuario', component: NuevoUsuarioComponent}, // Agregar nuevo usuario
-  { path: 'editar-usuario/:id', component: EditarUsuarioComponent}, // Editar usuario
-  { path: 'ver-usuario', component: VerperfilComponent},//Ver mi perfil
-  { path: 'ver-egresos', component: VeregresosComponent},//Ver egresos
-  { path: 'registrar-egreso', component: AgregaregresoComponent},//Agregar egreso
-  { path: 'editar-egreso/:id', component: EditarEgresoComponent},//Agregar egreso
-  { path: 'agregar-egreso', component: AgregaregresoComponent},//Agregar egreso
-  { path: 'ver-unidad', component: VerunidadesdenegocioComponent},//Ver unidad de negocio
-  { path: 'editar-unidad/:id', component: EditarUnidadesdenegocioComponent},//Editar unidad de negocio
-  { path: 'agregar-unidad', component: AgregarUnidadesdenegocioComponent},//Agregar unidad de negocio
-  { path: 'ver-empresas', component: VerempresasComponent},//Ver empresas
-  { path: 'editar-empresa/:id', component: EditarEmpresaComponent },//Editar empresas
-  { path: 'agregar-empresa', component: AgregarEmpresaComponent},//Editar empresas
-  { path: 'ver-tipodeegreso', component: VertipodeegresoComponent},//Ver tipo de egreso
-  { path: 'agregar-tipo', component: AgregarTipodeegresoComponent},//Agregar tipo de egreso
-  { path: 'editar-tipo/:id', component: EditarTipodeegresoComponent},//Editar tipo de egreso
-  { path: 'ver-origen', component: VerOrigenComponent},//Ver origen egreso
-  { path: 'agregar-origen', component: AgregarOrigendeegresoComponent},//Agregar origen egreso
-  { path: 'editar-origen/:id', component: EditarOrigendeegresoComponent},//Editar origen egreso
-  { path: 'ver-productosyservicios', component: VerProductosyserviciosComponent},//Ver productos y servicios
-  { path: 'editar-productosyservicios/:id', component: EditarProductosyserviciosComponent},//Editar productos y servicios
-  { path: 'agregar-productosyservicios', component: AgregarProductosyserviciosComponent},//Agregar productos y servicios
-  { path: 'ver-papelera', component: VerPapeleraComponent},//Ver papelera ingresos
-  { path: 'ver-papelera-egresos', component: VerPapeleraegresosComponent},//Ver papelera egresos
+  { path: 'ingresos-admin', component: IngresosComponent, canActivate: [AdminGuard] }, // Ver ingresos
+  { path: 'editar-ingreso/:id', component: EditarIngresoComponent, canActivate: [AdminGuard] }, // Registrar nuevo ingreso
+  { path: 'nuevo-ingreso', component: NuevoIngresoComponent, canActivate: [AdminGuard]}, // Registrar nuevo ingreso
+  { path: 'nuevos-usuarios', component: NuevosusuariosComponent, canActivate: [AdminGuard] }, // Verusuarios
+  { path: 'nuevo-usuario', component: NuevoUsuarioComponent, canActivate: [AdminGuard]}, // Agregar nuevo usuario
+  { path: 'editar-usuario/:id', component: EditarUsuarioComponent, canActivate: [AdminGuard]}, // Editar usuario
+  { path: 'ver-usuario', component: VerperfilComponent, canActivate: [AdminGuard]},//Ver mi perfil
+  { path: 'ver-egresos', component: VeregresosComponent, canActivate: [AdminGuard]},//Ver egresos
+  { path: 'registrar-egreso', component: AgregaregresoComponent, canActivate: [AdminGuard]},//Agregar egreso
+  { path: 'editar-egreso/:id', component: EditarEgresoComponent, canActivate: [AdminGuard]},//Agregar egreso
+  { path: 'agregar-egreso', component: AgregaregresoComponent, canActivate: [AdminGuard]},//Agregar egreso
+  { path: 'ver-unidad', component: VerunidadesdenegocioComponent, canActivate: [AdminGuard]},//Ver unidad de negocio
+  { path: 'editar-unidad/:id', component: EditarUnidadesdenegocioComponent, canActivate: [AdminGuard]},//Editar unidad de negocio
+  { path: 'agregar-unidad', component: AgregarUnidadesdenegocioComponent, canActivate: [AdminGuard]},//Agregar unidad de negocio
+  { path: 'ver-empresas', component: VerempresasComponent, canActivate: [AdminGuard] },//Ver empresas
+  { path: 'editar-empresa/:id', component: EditarEmpresaComponent, canActivate: [AdminGuard]},//Editar empresas
+  { path: 'agregar-empresa', component: AgregarEmpresaComponent, canActivate: [AdminGuard]},//Editar empresas
+  { path: 'ver-tipodeegreso', component: VertipodeegresoComponent, canActivate: [AdminGuard]},//Ver tipo de egreso
+  { path: 'agregar-tipo', component: AgregarTipodeegresoComponent, canActivate: [AdminGuard]},//Agregar tipo de egreso
+  { path: 'editar-tipo/:id', component: EditarTipodeegresoComponent, canActivate: [AdminGuard]},//Editar tipo de egreso
+  { path: 'ver-origen', component: VerOrigenComponent, canActivate: [AdminGuard]},//Ver origen egreso
+  { path: 'agregar-origen', component: AgregarOrigendeegresoComponent, canActivate: [AdminGuard]},//Agregar origen egreso
+  { path: 'editar-origen/:id', component: EditarOrigendeegresoComponent, canActivate: [AdminGuard]},//Editar origen egreso
+  { path: 'ver-productosyservicios', component: VerProductosyserviciosComponent, canActivate: [AdminGuard]},//Ver productos y servicios
+  { path: 'editar-productosyservicios/:id', component: EditarProductosyserviciosComponent, canActivate: [AdminGuard]},//Editar productos y servicios
+  { path: 'agregar-productosyservicios', component: AgregarProductosyserviciosComponent, canActivate: [AdminGuard]},//Agregar productos y servicios
+  { path: 'ver-papelera', component: VerPapeleraComponent, canActivate: [AdminGuard]},//Ver papelera ingresos
+  { path: 'ver-papelera-egresos', component: VerPapeleraegresosComponent, canActivate: [AdminGuard]},//Ver papelera egresos
 //Rutas gerente
   { path: 'home-gerente', component: HomegerenteComponent},//Pagina principal gerente
-  { path: 'ver-ingresosgerente', component: VerIngresogerenteComponent},//Ver ingresos gerente
-  { path: 'nuevo-ingresogerente', component: NuevoIngresogerenteComponent},//Nuevo ingreso gerente
   { path: 'ver-egresosgerente', component: VerEgresogerenteComponent},//Ver egresos gerente
   { path: 'nuevo-egresogerente', component: NuevoEgresogerenteComponent},//Nuevo egreso gerente
   { path: 'ver-usuariogerente', component: VerPerfilgerenteComponent},//Ver perfil gerente
 //Rutas Finanzas
-  { path: 'home-finanzas', component: HomeFinanzasComponent},//Pagina principal finanzas
-  { path: 'ver-ingresosfinanzas', component: VerIngresofinanzasComponent},//Ver ingresos finanzas
-  { path: 'nuevo-ingresofinanzas', component: NuevoIngresofinanzasComponent},//Nuevo ingreso finanzas
+  { path: 'home-finanzas', component: HomeFinanzasComponent },//Pagina principal finanzas
   { path: 'ver-egresosfinanzas', component: VerEgresosfinanzasComponent},//Ver egresos finanzas
   { path: 'nuevo-egresofinanzas', component: NuevoEgresofinanzasComponent},//Nuevo egreso finanzas
   { path: 'ver-usuariofinanzas', component: VerPerfilfinanzasComponent},//Ver perfil finanzas

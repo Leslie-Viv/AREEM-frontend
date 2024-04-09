@@ -16,9 +16,8 @@ export class AdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (this.admin.getAuth) {
+    if (this.admin.isLoggedIn) {
       console.log('Access allowed');
-      this.goodNot();
       return true; // Usuario autenticado
     } else {
       console.log('No access');
@@ -42,15 +41,6 @@ export class AdminGuard implements CanActivate {
     })
   }
 
-  goodNot() {
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Access is authorized!',
-      showConfirmButton: false,
-      timer: 1500
-    })
-  }
 
 }
 
