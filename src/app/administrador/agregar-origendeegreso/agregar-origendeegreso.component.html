@@ -24,6 +24,8 @@
               </span>
             </div>
           </div>
+          <div *ngIf="origenForm.get('tipodecuenta')?.invalid && origenForm.get('tipodecuenta')?.touched"
+          class="error-message form-text text-danger">El tipo de cuenta es requerido </div>
         </div>
        <input type="submit" class="btn" value="agregar">  
     </div>

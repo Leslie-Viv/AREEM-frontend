@@ -54,6 +54,8 @@
               </span>
             </div>
           </div>
+          <div *ngIf="tipoForm.get('gasto')?.invalid && tipoForm.get('gasto')?.touched"
+          class="error-message form-text text-danger">El gasto es requerido </div>
         </div>
           
        <input type="submit" class="btn" value="agregar">  
