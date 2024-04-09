@@ -45,7 +45,8 @@ import { VerPapeleraegresosComponent } from './administrador/ver-papeleraegresos
 const routes: Routes = [
   // Otras rutas existentes
   { path: 'inicio-admin', component: PaginaprincipalComponent }, // Pagina principal admin
-  { path: '', component: LoginComponent, pathMatch: 'full' }, // Ruta raiz
+  { path: 'login', component: LoginComponent }, // Ruta para el componente de inicio de sesión
+  { path: '', redirectTo: '/login', pathMatch: 'full', }, // Ruta raíz redirige al componente de inicio de sesión
   { path: 'ingresos-admin', component: IngresosComponent }, // Ver ingresos
   { path: 'editar-ingreso/:id', component: EditarIngresoComponent }, // Registrar nuevo ingreso
   { path: 'nuevo-ingreso', component: NuevoIngresoComponent }, // Registrar nuevo ingreso

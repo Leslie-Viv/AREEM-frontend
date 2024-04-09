@@ -5,7 +5,7 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item  (click)="Verperfil()" routerLink="./ver-usuario">Ver mi perfil</button>
-      <button mat-menu-item routerLink="">Cerrar Sesión</button>
+      <button mat-menu-item (click)="confirmAction()">Cerrar Sesión</button>
       <button mat-menu-item routerLink="./inicio-admin">Cancelar</button>
     </mat-menu>
   </div>

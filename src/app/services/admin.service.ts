@@ -85,18 +85,6 @@ export class AdminService {
   
 
 
-
-  // agregarUsuario(user: any): Observable<any> {
-  //   return this.http.post(this.api + '/api/nuevousuario', user, this.httpOptions)
-  //     .pipe(
-  //       catchError(error => {
-  //         console.error('Error en la solicitud agregarUsuarios:', error);
-  //         throw error; // Propagar el error para que sea manejado en el lugar donde se llama a este método
-  //       })
-  //     );
-  // }
-  
-
   getUserInfo() {
     return this.http.get(this.api + '/api/profileadmin', {
       withCredentials: true

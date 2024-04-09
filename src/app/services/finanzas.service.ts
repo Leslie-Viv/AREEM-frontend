@@ -51,7 +51,7 @@ export class FinanzasService {
 
 
   logout() {
-    return this.http.post(this.api + '/api/logoutgerente', null, {
+    return this.http.post(this.api + '/api/logoutfinanzas', null, {
       withCredentials: true
     }).pipe(
       tap(() => {

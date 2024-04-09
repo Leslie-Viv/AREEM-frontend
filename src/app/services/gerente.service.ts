@@ -54,7 +54,7 @@ export class GerenteService {
 
 
   logout() {
-    return this.http.post(this.api + '/api/logoutfinanzas', null, {
+    return this.http.post(this.api + '/api/logoutgerente', null, {
       withCredentials: true
     }).pipe(
       tap(() => {
