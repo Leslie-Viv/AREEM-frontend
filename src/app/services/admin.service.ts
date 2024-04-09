@@ -67,11 +67,22 @@ export class AdminService {
     );
   }
 
+  checkEmailAvailability(email: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.api}/api/check-email/${email}`, { withCredentials: true }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error al verificar la disponibilidad del correo electrónico:', error);
+        // Aquí puedes realizar acciones específicas, como mostrar un mensaje de error al usuario
+        return throwError('Ocurrió un error al verificar la disponibilidad del correo electrónico.');
+      })
+    );
+  }
+
   agregarUsuario(user: any) {
     return this.http.post(this.api + '/api/nuevousuario', user, {
       withCredentials: true
     });
   }
+  
 
 
 
@@ -255,9 +266,23 @@ export class AdminService {
     return this.http.get<any>(`${this.url}/obteneregreso/${id}`);
   }
 
+  obtenerUsuarioPorId(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/obtenerusuario/${id}`, { withCredentials: true }).pipe(
+      catchError(error => {
+        console.error('Error al obtener usuario por ID:', error);
+        return throwError(error); // Devuelve un Observable de error
+      })
+    );
+  }
 
   actualizarempresa(id: number, datosActualizados: any): Observable<any> {
     return this.http.patch<any>(`${this.url}/actualizarempresa/${id}`, datosActualizados);
+  }
+  
+  actualizarUsuario(id: number, formData: FormData) {
+    return this.http.patch(this.api + `/api/actualizarusuario/${id}`, formData, {
+      withCredentials: true
+    });
   }
 
   actualizarproducto(id: number, datosActualizadosProducto: any): Observable<any> {
@@ -282,6 +307,8 @@ export class AdminService {
   actualizaregreso(id: number, datosActualizados: any): Observable<any> {
     return this.http.patch<any>(`${this.url}/actualizaregreso/${id}`, datosActualizados);
   }
+
+
 
   
 

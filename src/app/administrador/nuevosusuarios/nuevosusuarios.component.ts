@@ -44,10 +44,16 @@ export class NuevosusuariosComponent {
       this.router.navigate(['/nuevo-usuario']);
     }
   
-    editarusuario(): void {
-      this.router.navigate(['/editar-usuario']);
+    editarusuario(usuario: Usuarios): void {
+      if (usuario && usuario.id) { // Verificar que el usuario y su id no sean nulos o indefinidos
+        this.router.navigate(['/editar-usuario', usuario.id]);
+      } else {
+        // Manejar el caso en el que el id del usuario no sea válido
+        console.error('El usuario seleccionado no tiene un ID válido');
+        // Puedes mostrar una alerta o mensaje de error aquí
+      }
     }
-
+    
     generatePDF(usuarios: any[]): void {
       try {
         const documentDefinition = {

@@ -21,7 +21,7 @@
   
     
     <div class="container mt-4">
-      <div class="table-responsive">
+      <div class="table-responsive" style="max-height: 80vh; overflow-y: auto;">
         <table class="table">
           <thead>
             <tr>
@@ -39,7 +39,7 @@
               <td>{{ usuario.nombreempresa }}</td>
               <td>{{ usuario.nombrecompleto}}</td>
               <td>{{ usuario.email }}</td>
-              <td><button (click)="editarusuario()" class="btn btn-second">Editar</button></td>
+              <td><button (click)="editarusuario(usuario)" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>
         </table>
