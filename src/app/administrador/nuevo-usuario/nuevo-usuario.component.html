@@ -24,17 +24,19 @@
         <label for="nombrecompleto">Nombre completo:</label>
         <input type="text" class="form-control" id="nombrecompleto" formControlName="nombrecompleto" placeholder="Escribe el nombre completo del usuario">
         <div *ngIf="usuarioForm.get('nombrecompleto')?.invalid && usuarioForm.get('nombrecompleto')?.touched"
-        class="error-message form-text text-danger">La fecha real es requerida </div>
+        class="error-message form-text text-danger">El nombre completo es requerido </div>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
         <input type="text" class="form-control" id="email" formControlName="email" placeholder="Escribe el correo electronico">
         <div *ngIf="usuarioForm.get('email')?.invalid && usuarioForm.get('email')?.touched"
-        class="error-message form-text text-danger">La fecha real es requerida </div>
+        class="error-message form-text text-danger">El correo electrónico es requerido </div>
       </div>
         <div class="form-group">
             <label for="password">Password:</label>
             <input formControlName="password" required="" class="form-control" name="password" id="password" type="text">
+            <div *ngIf="usuarioForm.get('password')?.invalid && usuarioForm.get('password')?.touched"
+        class="error-message form-text text-danger">La contraseña es requerida</div>
           </div>
           <div class="form-group">
             <label for="rol_id">Id rol::</label>
