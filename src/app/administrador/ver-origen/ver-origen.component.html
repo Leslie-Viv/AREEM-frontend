@@ -35,10 +35,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let origen of listOrigenes">
-              <td>{{ origen.id }}</td>
-              <td>{{ origen.origenegreso}}</td>
-              <td>{{ origen.tipodecuenta}}</td>
-              <td><button (click)="editarorigen(origen)" class="btn btn-second">Editar</button></td>
+              <td class="producto-cell">{{ origen.id }}</td>
+              <td class="producto-cell">{{ origen.origenegreso}}</td>
+              <td class="producto-cell">{{ origen.tipodecuenta}}</td>
+              <td class="button-cell"><button (click)="editarorigen(origen)" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>
         </table>

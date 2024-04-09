@@ -39,15 +39,15 @@
           </thead>
           <tbody>
             <tr *ngFor="let tipo of listTipos">
-              <td>{{ tipo.id }}</td>
-              <td>{{ tipo.N1 }}</td>
-              <td>{{ tipo.N2 }}</td>
-              <td>{{ tipo.N3 }}</td>
-              <td>{{ tipo.N4 }}</td>
-              <td>{{ tipo.N5 }}</td>
-              <td>{{ tipo.descripcionegreso}}</td>
-              <td>{{ tipo.gasto}}</td>
-              <td><button (click)="editartipo(tipo)" class="btn btn-second">Editar</button></td>
+              <td class="producto-cell">{{ tipo.id }}</td>
+              <td class="producto-cell">{{ tipo.N1 }}</td>
+              <td class="producto-cell">{{ tipo.N2 }}</td>
+              <td class="producto-cell">{{ tipo.N3 }}</td>
+              <td class="producto-cell">{{ tipo.N4 }}</td>
+              <td class="producto-cell">{{ tipo.N5 }}</td>
+              <td class="producto-cell">{{ tipo.descripcionegreso}}</td>
+              <td class="producto-cell">{{ tipo.gasto}}</td>
+              <td class="button-cell"><button (click)="editartipo(tipo)" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>
         </table>

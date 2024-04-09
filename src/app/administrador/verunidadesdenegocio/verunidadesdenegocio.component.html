@@ -33,9 +33,9 @@
           </thead>
           <tbody>
             <tr *ngFor="let unidad of listUnidades">
-              <td>{{ unidad.id }}</td>
-              <td>{{ unidad.nombreunidad }}</td>
-              <td><button (click)="editarunidad(unidad)" class="btn btn-second">Editar</button></td>
+              <td class="producto-cell">{{ unidad.id }}</td>
+              <td class="producto-cell">{{ unidad.nombreunidad }}</td>
+              <td class="button-cell"><button (click)="editarunidad(unidad)" class="btn btn-second">Editar</button></td>
             </tr>
           </tbody>
         </table>

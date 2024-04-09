@@ -193,5 +193,14 @@
   top: 18px;
   left: 17px;
 }
+
+.producto-cell {
+  width: 40%; /* Porcentaje del ancho de la tabla para las celdas de producto */
+}
+
+.button-cell {
+  width: 10%; /* Porcentaje del ancho de la tabla para las celdas de botón */
+}
+  
   
  
